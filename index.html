@@ -3,168 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>你的姓名 - 个人主页</title>
+    <title>个人主页</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
+            line-height: 1.65; /* 略微增加行高以提升阅读舒适度 */
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa; /* 淡雅的背景色 */
-            color: #212529;
+            background-color: #f8f9fa;
+            color: #343a40; /* 统一主要文字颜色 */
             display: flex;
             flex-direction: column;
             align-items: center;
         }
         .container {
             width: 90%;
-            max-width: 960px; /* 更宽一些以适应左右布局 */
-            margin: 30px auto;
-            padding: 20px;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            border-radius: 8px;
-        }
-        header h1 {
-            margin-bottom: 10px;
-            font-size: 2.5em;
-            color: #343a40;
-        }
-        header p {
-            font-size: 1.1em;
-            color: #495057;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 960px;
+            margin: 40px auto; /* 顶部 margin 稍作调整 */
+            padding: 0 20px; /* 移除容器的垂直 padding，由内部元素控制 */
+            box-sizing: border-box;
         }
 
         /* 书籍展示区 */
         .book-showcase-wrapper {
             background-color: #fff;
-            padding: 30px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-            border-radius: 8px;
-            margin-bottom: 30px;
+            padding: 35px; /* 略微增加内边距 */
+            box-shadow: 0 6px 18px rgba(0,0,0,0.07); /* 调整阴影使其更柔和、高级 */
+            border-radius: 12px; /* 增加圆角大小 */
+            margin-bottom: 40px; /* 调整与下方元素的间距 */
         }
         .book-showcase {
             display: flex;
-            flex-direction: column; /* 默认堆叠 */
-            align-items: center; /* 默认居中 */
-            gap: 30px; /* 图片和下载链接之间的间距 */
+            flex-direction: column; 
+            align-items: center; 
+            gap: 35px; /* 调整元素间距 */
         }
         .book-visual {
-            flex-basis: 40%; /* 左侧封面占据一定比例 */
-            max-width: 300px; /* 限制封面最大宽度 */
-            text-align: center; /* 确保图片在容器内居中 */
+            flex-basis: 40%; 
+            max-width: 280px; /* 略微调整封面最大宽度 */
+            text-align: center;
         }
         .book-cover-style {
             max-width: 100%;
             height: auto;
-            border-radius: 4px; /* 轻微的圆角 */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* 给封面更明显的阴影 */
+            border-radius: 8px; /* 封面圆角 */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12); /* 调整封面阴影 */
         }
         .book-actions {
-            flex-basis: 55%; /* 右侧下载区域占据一定比例 */
+            flex-basis: 58%; /* 略微调整占比 */
             display: flex;
             flex-direction: column;
+            width: 100%; /* 确保在堆叠时占满宽度 */
         }
         .book-actions h2 {
-            font-size: 1.8em;
-            color: #343a40;
+            font-size: 1.7em; /* 调整标题大小 */
+            color: #212529; /* 深色标题 */
             margin-top: 0;
-            margin-bottom: 20px;
-            /* text-align: center; /* 图片中标题居中 */
+            margin-bottom: 25px;
+            font-weight: 600; /* 略微加粗 */
         }
         .download-group {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
         .download-link-button {
-            display: inline-flex; /* 使用 flex 布局来对齐图标和文本 */
-            align-items: center; /* 垂直居中对齐 */
-            background-color: #f1f3f5; /* 淡灰色背景，类似图片中的下拉框 */
-            color: #212529; /* 深色文字 */
-            padding: 12px 20px;
+            display: inline-flex; 
+            align-items: center; 
+            background-color: #ffffff; /* 按钮背景改为白色 */
+            color: #343a40; /* 按钮文字颜色 */
+            padding: 14px 22px; /* 调整按钮内边距 */
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 8px; /* 按钮圆角 */
             font-weight: 500;
-            font-size: 1em;
-            border: 1px solid #ced4da; /* 边框 */
-            transition: background-color 0.2s ease, border-color 0.2s ease;
-            width: 100%; /* 让按钮宽度充满可用空间 */
-            box-sizing: border-box; /* 确保 padding 不会增加总宽度 */
-            text-align: left; /* 按钮内文本左对齐 */
+            font-size: 0.95em; /* 略微调整字体大小 */
+            border: 1px solid #dee2e6; /* 更柔和的边框颜色 */
+            transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+            width: 100%; 
+            box-sizing: border-box; 
+            text-align: left; 
         }
-        .download-link-button .icon { /* 简单的下载图标 */
-            margin-right: 10px;
-            font-size: 1.2em;
+        .download-link-button .icon {
+            margin-right: 12px; /* 图标与文字间距 */
+            font-size: 1.15em;
+            color: #495057; /* 图标颜色 */
+            transition: color 0.2s ease;
         }
         .download-link-button:hover {
-            background-color: #e9ecef;
-            border-color: #adb5bd;
+            background-color: #007bff; /* 主要品牌色作为悬停背景 */
+            border-color: #007bff;
+            color: #ffffff; /* 悬停时文字变白 */
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* 悬停时添加阴影 */
+        }
+        .download-link-button:hover .icon {
+            color: #ffffff; /* 悬停时图标变白 */
         }
         .format-description {
-            font-size: 0.9em;
-            color: #6c757d; /* 柔和的说明文字颜色 */
-            margin-top: 8px;
-            padding-left: 5px; /* 轻微缩进 */
+            font-size: 0.88em;
+            color: #6c757d; 
+            margin-top: 10px; /* 调整与按钮的间距 */
+            padding-left: 2px; 
         }
 
         /* 许可证声明 */
         .license-section {
             background-color: #fff;
-            padding: 25px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            border-radius: 8px;
-            text-align: center; /* 整体居中 */
+            padding: 30px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+            border-radius: 12px;
+            text-align: center; 
+            margin-bottom: 40px;
         }
         .license-section h3 {
-            font-size: 1.5em;
-            color: #343a40;
+            font-size: 1.4em; /* 调整标题大小 */
+            color: #212529;
             margin-top: 0;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
         .license-section p {
-            font-size: 0.95em;
+            font-size: 0.92em;
             color: #495057;
-            max-width: 700px;
+            max-width: 680px;
             margin-left: auto;
             margin-right: auto;
         }
 
         footer {
             text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            font-size: 0.9em;
+            margin-top: 20px; /* 调整与上方内容间距 */
+            padding: 25px 20px;
+            font-size: 0.85em; /* 调整页脚字体大小 */
             color: #6c757d;
             width: 100%;
-            background-color: #e9ecef; /* 页脚背景色 */
+            background-color: transparent; /* 页脚背景改为透明，与body背景一致 */
         }
 
-        /* 响应式设计：当屏幕宽度大于等于 768px 时，封面和下载并排 */
+        /* 响应式设计 */
         @media (min-width: 768px) {
             .book-showcase {
-                flex-direction: row; /* 水平排列 */
-                align-items: flex-start; /* 顶部对齐 */
+                flex-direction: row; 
+                align-items: flex-start; 
             }
             .book-actions h2 {
-                 /* text-align: left; /* 在大屏幕上，标题也左对齐 */
+                 text-align: left; /* 在大屏幕上，标题左对齐 */
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>你的姓名</h1>
-            <p>这里是你的个人介绍。你可以简洁地介绍你自己，你的研究方向，或者任何你想分享的关于你的信息。</p>
-        </header>
-
         <div class="book-showcase-wrapper">
             <article class="book-showcase">
                 <div class="book-visual">
@@ -204,7 +190,7 @@
     </div>
 
     <footer>
-        <p>&copy; <span id="currentYear"></span> 你的姓名. 版权所有.</p>
+        <p>&copy; <span id="currentYear"></span> 你的姓名或网站名. 版权所有.</p>
     </footer>
 
     <script>
