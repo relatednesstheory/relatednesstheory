@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人主页</title>
+    <title>个人主页 - 深邃版</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.65; /* 略微增加行高以提升阅读舒适度 */
+            line-height: 1.65;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #343a40; /* 统一主要文字颜色 */
+            background-color: #2C2C2C; /* 深邃炭黑背景 */
+            color: #e0e0e0; /* 默认文字颜色改为浅色 */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -19,48 +19,49 @@
         .container {
             width: 90%;
             max-width: 960px;
-            margin: 40px auto; /* 顶部 margin 稍作调整 */
-            padding: 0 20px; /* 移除容器的垂直 padding，由内部元素控制 */
+            margin: 80px auto; /* 保持之前的上下边距调整 */
+            padding: 0 20px; 
             box-sizing: border-box;
         }
 
         /* 书籍展示区 */
         .book-showcase-wrapper {
-            background-color: #fff;
-            padding: 35px; /* 略微增加内边距 */
-            box-shadow: 0 6px 18px rgba(0,0,0,0.07); /* 调整阴影使其更柔和、高级 */
-            border-radius: 12px; /* 增加圆角大小 */
-            margin-bottom: 40px; /* 调整与下方元素的间距 */
+            background-color: #383838; /* 比主背景略浅的深灰 */
+            padding: 35px; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3); /* 调整阴影适应深色背景 */
+            border-radius: 12px; 
+            margin-bottom: 40px;
         }
         .book-showcase {
             display: flex;
             flex-direction: column; 
             align-items: center; 
-            gap: 35px; /* 调整元素间距 */
+            gap: 35px; 
         }
         .book-visual {
             flex-basis: 40%; 
-            max-width: 280px; /* 略微调整封面最大宽度 */
+            max-width: 280px; 
             text-align: center;
         }
         .book-cover-style {
             max-width: 100%;
             height: auto;
-            border-radius: 8px; /* 封面圆角 */
-            box-shadow: 0 5px 20px rgba(0,0,0,0.12); /* 调整封面阴影 */
+            border-radius: 8px; 
+            /* 在深色背景下，封面的阴影可以更微妙或采用不同方式，这里暂时保留之前的，可按需调整或移除 */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25); 
         }
         .book-actions {
-            flex-basis: 58%; /* 略微调整占比 */
+            flex-basis: 58%; 
             display: flex;
             flex-direction: column;
-            width: 100%; /* 确保在堆叠时占满宽度 */
+            width: 100%; 
         }
         .book-actions h2 {
-            font-size: 1.7em; /* 调整标题大小 */
-            color: #212529; /* 深色标题 */
+            font-size: 1.7em; 
+            color: #f5f5f5; /* 标题文字改为亮白色 */
             margin-top: 0;
             margin-bottom: 25px;
-            font-weight: 600; /* 略微加粗 */
+            font-weight: 600; 
         }
         .download-group {
             margin-bottom: 22px;
@@ -68,60 +69,58 @@
         .download-link-button {
             display: inline-flex; 
             align-items: center; 
-            background-color: #ffffff; /* 按钮背景改为白色 */
-            color: #343a40; /* 按钮文字颜色 */
-            padding: 14px 22px; /* 调整按钮内边距 */
+            background-color: #4F4F4F; /* 按钮背景 - 中度灰色 */
+            color: #f5f5f5; /* 按钮文字 - 亮白色 */
+            padding: 14px 22px; 
             text-decoration: none;
-            border-radius: 8px; /* 按钮圆角 */
+            border-radius: 8px; 
             font-weight: 500;
-            font-size: 0.95em; /* 略微调整字体大小 */
-            border: 1px solid #dee2e6; /* 更柔和的边框颜色 */
-            transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+            font-size: 0.95em; 
+            border: 1px solid #606060; /* 按钮边框颜色 */
+            transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
             width: 100%; 
             box-sizing: border-box; 
             text-align: left; 
         }
         .download-link-button .icon {
-            margin-right: 12px; /* 图标与文字间距 */
+            margin-right: 12px; 
             font-size: 1.15em;
-            color: #495057; /* 图标颜色 */
-            transition: color 0.2s ease;
+            color: #f5f5f5; /* 图标颜色与文字一致 */
         }
         .download-link-button:hover {
-            background-color: #007bff; /* 主要品牌色作为悬停背景 */
-            border-color: #007bff;
-            color: #ffffff; /* 悬停时文字变白 */
-            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* 悬停时添加阴影 */
-        }
-        .download-link-button:hover .icon {
-            color: #ffffff; /* 悬停时图标变白 */
+            background-color: #5a5a5a; /* 悬停时按钮背景变亮一些 */
+            border-color: #707070;
+            /* 如果想用强调色 (例如红色 #B71C1C，请替换下面的颜色): */
+            /* background-color: #B71C1C; */
+            /* border-color: #B71C1C; */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4); 
         }
         .format-description {
             font-size: 0.88em;
-            color: #6c757d; 
-            margin-top: 10px; /* 调整与按钮的间距 */
+            color: #b0b0b0; /* 说明文字颜色 - 浅灰色 */
+            margin-top: 10px; 
             padding-left: 2px; 
         }
 
         /* 许可证声明 */
         .license-section {
-            background-color: #fff;
+            background-color: #383838; /* 同书籍区背景 */
             padding: 30px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
             border-radius: 12px;
             text-align: center; 
             margin-bottom: 40px;
         }
         .license-section h3 {
-            font-size: 1.4em; /* 调整标题大小 */
-            color: #212529;
+            font-size: 1.4em; 
+            color: #f5f5f5; /* 标题文字改为亮白色 */
             margin-top: 0;
             margin-bottom: 15px;
             font-weight: 600;
         }
         .license-section p {
             font-size: 0.92em;
-            color: #495057;
+            color: #cccccc; /* 段落文字改为较亮的灰色 */
             max-width: 680px;
             margin-left: auto;
             margin-right: auto;
@@ -129,12 +128,12 @@
 
         footer {
             text-align: center;
-            margin-top: 20px; /* 调整与上方内容间距 */
+            margin-top: 20px; 
             padding: 25px 20px;
-            font-size: 0.85em; /* 调整页脚字体大小 */
-            color: #6c757d;
+            font-size: 0.85em; 
+            color: #a0a0a0; /* 页脚文字颜色 - 中等浅灰 */
             width: 100%;
-            background-color: transparent; /* 页脚背景改为透明，与body背景一致 */
+            background-color: transparent; 
         }
 
         /* 响应式设计 */
@@ -144,7 +143,7 @@
                 align-items: flex-start; 
             }
             .book-actions h2 {
-                 text-align: left; /* 在大屏幕上，标题左对齐 */
+                 text-align: left; 
             }
         }
     </style>
