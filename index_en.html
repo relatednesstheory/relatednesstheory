@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Homepage - Dark Version</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.65;
+            margin: 0;
+            padding: 0;
+            background-color: #2C2C2C; /* Deep charcoal background */
+            color: #e0e0e0; /* Default text color changed to light */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 960px;
+            margin: 80px auto; 
+            padding: 0 20px; 
+            box-sizing: border-box;
+        }
+
+        /* Book Showcase Section */
+        .book-showcase-wrapper {
+            background-color: #383838; /* Slightly lighter dark gray than main background */
+            padding: 35px; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3); /* Shadow adjusted for dark background */
+            border-radius: 12px; 
+            margin-bottom: 40px;
+        }
+        .book-showcase {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            gap: 35px; 
+        }
+        .book-visual {
+            flex-basis: 40%; 
+            max-width: 280px; 
+            text-align: center;
+        }
+        .book-cover-style {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25); 
+        }
+        .book-actions {
+            flex-basis: 58%; 
+            display: flex;
+            flex-direction: column;
+            width: 100%; 
+        }
+        .book-actions h2 {
+            font-size: 1.7em; 
+            color: #f5f5f5; /* Heading text to light white */
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-weight: 600; 
+        }
+        .download-group {
+            margin-bottom: 22px;
+        }
+        .download-link-button {
+            display: inline-flex; 
+            align-items: center; 
+            background-color: #4F4F4F; /* Button background - medium gray */
+            color: #f5f5f5; /* Button text - light white */
+            padding: 14px 22px; 
+            text-decoration: none;
+            border-radius: 8px; 
+            font-weight: 500;
+            font-size: 0.95em; 
+            border: 1px solid #606060; /* Button border color */
+            transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            width: 100%; 
+            box-sizing: border-box; 
+            text-align: left; 
+        }
+        .download-link-button .icon {
+            margin-right: 12px; 
+            font-size: 1.15em;
+            color: #f5f5f5; /* Icon color same as text */
+        }
+        .download-link-button:hover {
+            background-color: #5a5a5a; /* Button background brightens on hover */
+            border-color: #707070;
+            /* If you want to use an accent color (e.g., red #B71C1C), replace the color below: */
+            /* background-color: #B71C1C; */
+            /* border-color: #B71C1C; */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4); 
+        }
+        .format-description {
+            font-size: 0.88em;
+            color: #b0b0b0; /* Description text color - light gray */
+            margin-top: 10px; 
+            padding-left: 2px; 
+        }
+
+        /* License Statement Section */
+        .license-section {
+            background-color: #383838; /* Same background as book section */
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            border-radius: 12px;
+            text-align: center; 
+            margin-bottom: 40px;
+        }
+        .license-section h3 {
+            font-size: 1.4em; 
+            color: #f5f5f5; /* Heading text to light white */
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .license-section p {
+            font-size: 0.92em;
+            color: #cccccc; /* Paragraph text to a brighter gray */
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px; 
+            padding: 25px 20px;
+            font-size: 0.85em; 
+            color: #a0a0a0; /* Footer text color - medium light gray */
+            width: 100%;
+            background-color: transparent; 
+        }
+
+        /* Language Switcher Styles */
+        .language-switcher {
+            margin-bottom: 15px; 
+            font-size: 0.95em; 
+        }
+        .language-switcher a, .language-switcher span {
+            color: #a0a0a0; 
+            text-decoration: none;
+            padding: 0 8px; 
+            transition: color 0.2s ease;
+        }
+        .language-switcher a:hover {
+            color: #f5f5f5; 
+            text-decoration: underline;
+        }
+        .language-switcher span {
+            color: #f5f5f5; 
+            font-weight: bold; 
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .book-showcase {
+                flex-direction: row; 
+                align-items: flex-start; 
+            }
+            .book-actions h2 {
+                 text-align: left; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="book-showcase-wrapper">
+            <article class="book-showcase">
+                <div class="book-visual">
+                    <img src="my-great-book-cover.png" alt="Book Cover Image" class="book-cover-style">
+                </div>
+                <div class="book-actions">
+                    <h2>Download Links</h2>
+                    
+                    <div class="download-group">
+                        <a href="book_1.docx" download class="download-link-button">
+                            <span class="icon">⇩</span> Download .docx
+                        </a>
+                        <p class="format-description">.docx is suitable for users who need to edit or read in-depth on a computer.</p>
+                    </div>
+                    
+                    <div class="download-group">
+                        <a href="book_1.epub" download class="download-link-button">
+                            <span class="icon">⇩</span> Download .epub
+                        </a>
+                        <p class="format-description">.epub is suitable for users who use e-readers or mobile phones/tablets for mobile reading.</p>
+                    </div>
+                    
+                    <div class="download-group">
+                        <a href="book_1.pdf" download class="download-link-button">
+                            <span class="icon">⇩</span> Download .pdf
+                        </a>
+                        <p class="format-description">.pdf is suitable for users who need to preserve the original layout or print.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <section class="license-section">
+            <h3>License Statement</h3>
+            <p>This is your license statement text. The license dolor sit amet, dolipiog tficila Jccetam the voulecting the and toilcenianse picetset aclid tharirthe pocest poliaat intion, Minis ppsd tiyusened.</p>
+        </section>
+    </div>
+
+    <footer>
+        <div class="language-switcher">
+            <a href="index.html">中文</a> | <span>English</span>
+        </div>
+        <p>&copy; <span id="currentYear"></span> Your Name or Site Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
