@@ -15,17 +15,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-top: 0; 
+            padding-top: 0; /* Language switcher now has its own padding */
         }
 
         .language-switcher-top {
             width: 100%;
             text-align: center;
-            padding: 15px 0; 
-            margin-bottom: 20px; 
+            padding: 15px 0; /* Increased top/bottom padding */
+            margin-bottom: 20px; /* Spacing below */
             font-size: 0.95em;
-            background-color: #ffffff; 
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+            background-color: #ffffff; /* White background for switcher */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle bottom shadow */
         }
         .language-switcher-top a, .language-switcher-top span {
             color: #555; 
@@ -45,12 +45,12 @@
         .main-content-wrapper {
             width: 90%;
             max-width: 500px; 
-            margin: 20px auto 40px auto; 
+            margin: 20px auto 40px auto; /* Adjusted top margin */
             text-align: center; 
         }
 
         .book-cover-main {
-            max-width: 70%; 
+            max-width: 70%; /* Cover width relative to parent, adjustable */
             height: auto;
             border-radius: 8px; 
             box-shadow: 0 6px 20px rgba(0,0,0,0.12); 
@@ -84,7 +84,7 @@
             display: flex;
             justify-content: center; 
             gap: 15px; 
-            margin-bottom: 30px; 
+            margin-bottom: 30px; /* Space for potentially revealed download area */
         }
 
         .action-button {
@@ -124,14 +124,14 @@
         #download-options-container {
             margin-top: 30px;
             width: 100%;
-            text-align: left; 
-            border-top: 1px solid #e0e0e0; 
+            text-align: left; /* Align groups to the left */
+            border-top: 1px solid #e0e0e0; /* Separator line */
             padding-top: 25px;
         }
 
         .download-group-revealed {
             margin-bottom: 20px;
-            background-color: #ffffff; 
+            background-color: #ffffff; /* Background for each download group */
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.08);
@@ -143,10 +143,10 @@
             border: 1px solid #ced4da; 
             display: inline-flex; 
             align-items: center;
-            width: auto; 
+            width: auto; /* Auto width, not full row */
             padding: 10px 20px; 
             text-decoration: none;
-            border-radius: 6px; 
+            border-radius: 6px; /* Adjusted border radius */
             font-weight: 500;
             font-size: 0.9em;
             transition: background-color 0.2s ease, border-color 0.2s ease;
@@ -170,11 +170,11 @@
         
         footer {
             text-align: center;
-            padding: 30px 20px; 
+            padding: 30px 20px; /* Increased footer top/bottom padding */
             font-size: 0.8em; 
             color: #888888; 
             width: 100%;
-            margin-top: 30px; 
+            margin-top: 30px; /* Spacing from content above */
         }
     </style>
 </head>
@@ -184,12 +184,12 @@
     </div>
 
     <div class="main-content-wrapper">
-        <img src="/images/ENGLISH.jpg" alt="Book Cover Image" class="book-cover-main"> 
+        <img src="/images/CHINA.jpg" alt="Book Cover - Relatedness Theory" class="book-cover-main"> 
         
-        <h1 class="author-title">Author Name <span class="license-hint">(Open License Statement)</span></h1>
+        <h1 class="author-title">'Relatedness Theory' <span class="license-hint">(Open License Statement)</span></h1>
         
         <p class="author-intro">
-            This is a brief introduction about the author or the book, detailing core concepts, creative background, etc. Aim for concise and engaging text. Please replace this sample text.
+            This work, 'Relatedness Theory', by Wang Xiongwei, is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0 International) license.
         </p>
         
         <div class="action-buttons-group">
@@ -220,7 +220,7 @@
             </div>
         </div>
         </div> <footer>
-        <p>&copy; <span id="currentYear"></span> Your Name or Site Name. All rights reserved.</p>
+        <p>&copy; <span id="currentYear"></span> Wang Xiongwei. All rights reserved.</p>
     </footer>
 
     <script>
