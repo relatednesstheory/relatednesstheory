@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>作者主页</title>
+    <title>作者主页 - 《相关论》</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -15,17 +15,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-top: 0; /* 语言切换器现在有自己的padding */
+            padding-top: 0; 
         }
 
         .language-switcher-top {
             width: 100%;
             text-align: center;
-            padding: 15px 0; /* 增加上下内边距 */
-            margin-bottom: 20px; /* 与下方内容间距 */
+            padding: 15px 0; 
+            margin-bottom: 20px; 
             font-size: 0.95em;
-            background-color: #ffffff; /* 给切换器一个白色背景 */
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* 轻微底部阴影 */
+            background-color: #ffffff; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
         }
         .language-switcher-top a, .language-switcher-top span {
             color: #555; 
@@ -45,12 +45,12 @@
         .main-content-wrapper {
             width: 90%;
             max-width: 500px; 
-            margin: 20px auto 40px auto; /* 调整上边距 */
+            margin: 20px auto 40px auto; 
             text-align: center; 
         }
 
         .book-cover-main {
-            max-width: 70%; /* 封面宽度相对于父容器，可调整 */
+            max-width: 70%; 
             height: auto;
             border-radius: 8px; 
             box-shadow: 0 6px 20px rgba(0,0,0,0.12); 
@@ -66,25 +66,81 @@
             font-weight: 600; 
         }
         .author-title .license-hint {
-            font-size: 0.6em;
-            font-weight: normal;
-            color: #666666;
+            font-size: inherit; 
+            font-weight: inherit; 
+            color: #222222;   
             margin-left: 5px;
         }
 
-        .author-intro {
+        .author-intro { 
             font-size: 0.95em;
             color: #555555;
             line-height: 1.7;
-            margin-bottom: 35px;
+            margin-bottom: 20px; 
             padding: 0 10px; 
+        }
+        .intro-toggle-link { 
+            color: #007bff;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-left: 3px; 
+            font-weight: 500; 
+        }
+        .intro-toggle-link:hover {
+            color: #0056b3;
+        }
+
+        #license_details_container {
+            margin-top: 20px; 
+            width: 100%;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: left; 
+            box-sizing: border-box;
+            border-top: 1px solid #e0e0e0;
+        }
+        #license_details_container h3 {
+            font-size: 1.3em;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        #license_details_container p {
+            font-size: 0.9em;
+            color: #444;
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+        #license_details_container ul {
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+        #license_details_container li {
+            font-size: 0.9em;
+            color: #444;
+            margin-bottom: 6px;
+        }
+        #license_details_container a.license-link { 
+            color: #007bff;
+            text-decoration: underline;
+        }
+        #license_details_container a.license-link:hover {
+            color: #0056b3;
+        }
+        hr.license-hr {
+            border: 0;
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: 20px 0;
         }
 
         .action-buttons-group {
             display: flex;
             justify-content: center; 
             gap: 15px; 
-            margin-bottom: 30px; /* 为下方可能展开的下载区域留出空间 */
+            margin-bottom: 30px; 
         }
 
         .action-button {
@@ -120,18 +176,17 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
-        /* 展开的下载选项容器 */
         #download-options-container {
             margin-top: 30px;
             width: 100%;
-            text-align: left; /* 让内部的 group 左对齐 */
-            border-top: 1px solid #e0e0e0; /* 分隔线 */
+            text-align: left; 
+            border-top: 1px solid #e0e0e0; 
             padding-top: 25px;
         }
 
         .download-group-revealed {
             margin-bottom: 20px;
-            background-color: #ffffff; /* 给每个下载组一个背景 */
+            background-color: #ffffff; 
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.08);
@@ -143,10 +198,10 @@
             border: 1px solid #ced4da; 
             display: inline-flex; 
             align-items: center;
-            width: auto; /* 自动宽度，不再占满整行 */
+            width: auto; 
             padding: 10px 20px; 
             text-decoration: none;
-            border-radius: 6px; /* 调整圆角 */
+            border-radius: 6px; 
             font-weight: 500;
             font-size: 0.9em;
             transition: background-color 0.2s ease, border-color 0.2s ease;
@@ -170,11 +225,11 @@
         
         footer {
             text-align: center;
-            padding: 30px 20px; /* 增加页脚上下内边距 */
+            padding: 30px 20px; 
             font-size: 0.8em; 
             color: #888888; 
             width: 100%;
-            margin-top: 30px; /* 与上方内容间距 */
+            margin-top: 30px; 
         }
     </style>
 </head>
@@ -184,14 +239,42 @@
     </div>
 
     <div class="main-content-wrapper">
-        <img src="/images/CHINA.jpg" alt="书籍封面 - 相对论" class="book-cover-main"> 
+        <img src="/images/CHINA.jpg" alt="书籍封面 - 《相关论》" class="book-cover-main"> 
         
         <h1 class="author-title">《相关论》 <span class="license-hint">(开放许可声明)</span></h1>
         
         <p class="author-intro">
-            本著作《相关论》由汪雄伟创作，采用 知识共享 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0 International) 许可协议 进行许可。
+            本著作《相关论》采用知识共享许可协议 (CC BY-NC-SA 4.0 International)。<a href="#" id="intro_toggle_link" class="intro-toggle-link">(查看许可详情与作品信息)</a>
         </p>
         
+        <div id="license_details_container" style="display: none;">
+            <h3>《相关论》开放许可声明</h3>
+            <p><strong>作者：</strong>汪雄伟</p>
+            <p>本著作《相关论》由汪雄伟创作，采用知识共享 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0 International) 许可协议进行许可。</p>
+            <p><strong>您可以自由地：</strong></p>
+            <ul>
+                <li><strong>分享</strong>— 在任何媒介以任何形式复制、发行本作品。</li>
+                <li><strong>演绎</strong>— 修改、转换或以本作品为基础进行创作。</li>
+            </ul>
+            <p><strong>惟须遵守下列条件：</strong></p>
+            <ul>
+                <li><strong>署名</strong>— 您必须给出适当的署名（《相关论》作者：汪雄伟，DOI: [暂无]），提供指向本许可协议的链接（见下），同时标明是否（对原始作品）作了修改。您可以用任何合理的方式来署名，但是不得以任何方式暗示许可人为您或您的使用背书。</li>
+                <li><strong>非商业性使用</strong>— 您不得将本作品用于商业目的。</li>
+                <li><strong>相同方式共享</strong>— 如果您再混合、转换或者基于本作品进行创作，您必须基于与原先许可协议相同的许可协议分发您贡献的作品。</li>
+            </ul>
+            <p><strong>没有附加限制</strong> — 您不得适用法律术语或者技术措施从而限制其他人做许可协议允许的事情。</p>
+            <p>本许可协议的完整官方文本可见：<br>
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-hans" target="_blank" rel="noopener noreferrer" class="license-link">https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-hans</a><br>
+                (简体中文版协议可见：<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" target="_blank" rel="noopener noreferrer" class="license-link">https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans</a>)
+            </p>
+            <hr class="license-hr">
+            <p><strong>官方获取渠道与作者支持：</strong><br>
+            《相关论》永久标识符 (DOI): [暂无]。<br>
+            当前由作者通过个人网站 <a href="https://relatednesstheory.github.io/" class="license-link">https://relatednesstheory.github.io/</a> 提供免费阅读和下载版本。建议通过此渠道获取作者发布的原始版本。<br>
+            如果您从本理论中受益，并希望支持作者持续的研究与创作，欢迎访问上述个人网站的“支持作者”页面了解赞助方式。<br>
+            感谢您的理解与支持，共同促进思想的自由传播与发展。</p>
+        </div>
+
         <div class="action-buttons-group">
             <a href="#" id="toggle-downloads-button" class="action-button primary-button">下载作品</a>
             <a href="support.html" class="action-button secondary-button">支持作者</a>
@@ -199,27 +282,29 @@
 
         <div id="download-options-container" style="display: none;">
             <div class="download-group-revealed">
-                <a href="book_1.docx" download class="action-button revealed-download-button">
+                <a href="downloads/《相关论》(1).docx" download class="action-button revealed-download-button">
                     <span class="icon">⇩</span> Download .docx
                 </a>
                 <p class="format-description-revealed">.docx 适合需要编辑或在电脑上深度阅读的用户。</p>
             </div>
             
             <div class="download-group-revealed">
-                <a href="book_1.epub" download class="action-button revealed-download-button">
+                <a href="downloads/《相关论》.epub" download class="action-button revealed-download-button">
                     <span class="icon">⇩</span> Download .epub
                 </a>
                 <p class="format-description-revealed">.epub 适合使用电子阅读器或手机/平板进行移动阅读的用户。</p>
             </div>
             
             <div class="download-group-revealed">
-                <a href="book_1.pdf" download class="action-button revealed-download-button">
+                <a href="downloads/《相关论》.pdf" download class="action-button revealed-download-button">
                     <span class="icon">⇩</span> Download .pdf
                 </a>
                 <p class="format-description-revealed">.pdf 适合需要保留原始排版或打印的用户。</p>
             </div>
         </div>
-        </div> <footer>
+        </div> 
+    
+    <footer>
         <p>&copy; <span id="currentYear"></span> 汪雄伟 版权所有</p>
     </footer>
 
@@ -228,16 +313,33 @@
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
         // 控制下载选项显示/隐藏的 JavaScript
-        const toggleButton = document.getElementById('toggle-downloads-button');
+        const toggleDownloadsButton = document.getElementById('toggle-downloads-button');
         const downloadsContainer = document.getElementById('download-options-container');
 
-        if (toggleButton && downloadsContainer) {
-            toggleButton.addEventListener('click', function(event) {
-                event.preventDefault(); // 阻止链接的默认跳转行为 (#)
+        if (toggleDownloadsButton && downloadsContainer) {
+            toggleDownloadsButton.addEventListener('click', function(event) {
+                event.preventDefault(); 
                 if (downloadsContainer.style.display === 'none' || downloadsContainer.style.display === '') {
                     downloadsContainer.style.display = 'block';
                 } else {
                     downloadsContainer.style.display = 'none';
+                }
+            });
+        }
+
+        // 控制简介/许可详情展开/收起的 JavaScript
+        const introToggleLink = document.getElementById('intro_toggle_link');
+        const licenseDetailsContainer = document.getElementById('license_details_container');
+
+        if (introToggleLink && licenseDetailsContainer) {
+            introToggleLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                if (licenseDetailsContainer.style.display === 'none' || licenseDetailsContainer.style.display === '') {
+                    licenseDetailsContainer.style.display = 'block';
+                    this.textContent = '(收起详情)';
+                } else {
+                    licenseDetailsContainer.style.display = 'none';
+                    this.textContent = '(查看许可详情与作品信息)';
                 }
             });
         }
