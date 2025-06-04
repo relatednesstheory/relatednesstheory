@@ -14,6 +14,29 @@
             color: #333333;
             text-align: center; /* 整体居中 */
         }
+        /* 在 support.html 的 <style> 标签内添加或修改 */
+
+/* ... 你 support.html 中已有的 body, .container 等样式 ... */
+
+.support-heading { /* 针对“支持作者”这个标题 */
+    font-size: 2em;     /* 标题字号，可以根据喜好调整 */
+    color: #2c3e50;     /* 一个沉稳而现代的深蓝灰色，比纯黑柔和 */
+    margin-top: 10px;   /* 与容器顶部的距离，如果它是第一个元素 */
+    margin-bottom: 25px;/* 与下方感谢语的距离 */
+    font-weight: 600;   /* 适当加粗 */
+    text-align: center; /* 确保标题居中 */
+}
+
+.support-message { /* 针对感谢语段落 */
+    font-size: 1.05em;   /* 正文字号，确保易读 */
+    color: #555555;     /* 比标题略浅的灰色，保持良好对比度 */
+    line-height: 1.8;   /* 更宽松的行高，提升阅读舒适度 */
+    max-width: 480px;   /* 限制文本块的最大宽度，避免行太长，保持居中感 */
+    margin-left: auto;  /* 配合 max-width 实现居中 */
+    margin-right: auto; /* 配合 max-width 实现居中 */
+    margin-bottom: 35px;/* 与下方二维码区域的距离 */
+    text-align: center; /* 段落内文本也居中 */
+}
         .container {
             max-width: 600px;
             margin: 40px auto;
@@ -76,10 +99,12 @@
 </head>
 <body>
     <div class="container">
-        <h1>支持作者</h1>
-        <p>感谢您的慷慨支持！
-         这是一份纯粹自愿且无回报的赞助。
-         您的每一份心意，都是对作者持续探索与创作的宝贵激励。</p>
+       <h1 class="support-heading">支持作者</h1>
+<p class="support-message">
+    感谢您的慷慨支持！<br>
+    这是一份纯粹自愿且无回报的赞助。<br>
+    您的每一份心意，都是对作者持续探索与创作的宝贵激励。
+</p>
 
         <div class="qr-codes">
             <div class="qr-code-item">
