@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>支持作者</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f8; /* 与主页一致的浅色背景 */
+            color: #333333;
+            text-align: center; /* 整体居中 */
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #222222;
+            margin-bottom: 30px;
+        }
+        .qr-codes {
+            display: flex;
+            flex-direction: column; /* 默认垂直排列 */
+            align-items: center;
+            gap: 30px; /* 图片之间的间距 */
+        }
+        .qr-code-item {
+            text-align: center;
+        }
+        .qr-code-item img {
+            max-width: 200px; /* 限制二维码图片大小 */
+            height: auto;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .qr-code-item p {
+            font-size: 0.9em;
+            color: #555;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.9em;
+            transition: background-color 0.2s ease;
+        }
+        .back-link:hover {
+            background-color: #555;
+        }
+
+        /* 在较宽屏幕上，二维码可以并排显示 */
+        @media (min-width: 600px) {
+            .qr-codes {
+                flex-direction: row; /* 水平排列 */
+                justify-content: space-around; /* 分散对齐 */
+            }
+            .qr-code-item {
+                flex: 1; /* 占据可用空间 */
+                max-width: 45%; /* 限制每个项目的最大宽度 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>支持作者</h1>
+        <p>如果我的作品对您有所帮助，欢迎通过以下方式支持我，非常感谢！</p>
+
+        <div class="qr-codes">
+            <div class="qr-code-item">
+                <img src="images/wechat_pay_qr.png" alt="微信支付二维码">
+                <p>微信支付</p>
+            </div>
+            <div class="qr-code-item">
+                <img src="images/alipay_qr.png" alt="支付宝二维码">
+                <p>支付宝</p>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link">返回主页</a>
+    </div>
+</body>
+</html>
