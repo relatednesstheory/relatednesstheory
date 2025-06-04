@@ -3,219 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人主页 - 深邃版</title>
+    <title>作者主页</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.65;
             margin: 0;
             padding: 0;
-            background-color: #2C2C2C; /* 深邃炭黑背景 */
-            color: #e0e0e0; /* 默认文字颜色改为浅色 */
+            background-color: #f4f4f8; /* 浅色背景 */
+            color: #333333; /* 主要文字颜色 */
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-        .container {
-            width: 90%;
-            max-width: 960px;
-            margin: 80px auto; /* 保持之前的上下边距调整 */
-            padding: 0 20px; 
-            box-sizing: border-box;
+            padding-top: 0; /* 语言切换器现在有自己的padding */
         }
 
-        /* 书籍展示区 */
-        .book-showcase-wrapper {
-            background-color: #383838; /* 比主背景略浅的深灰 */
-            padding: 35px; 
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3); /* 调整阴影适应深色背景 */
-            border-radius: 12px; 
-            margin-bottom: 40px;
-        }
-        .book-showcase {
-            display: flex;
-            flex-direction: column; 
-            align-items: center; 
-            gap: 35px; 
-        }
-        .book-visual {
-            flex-basis: 40%; 
-            max-width: 280px; 
-            text-align: center;
-        }
-        .book-cover-style {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px; 
-            box-shadow: 0 5px 20px rgba(0,0,0,0.25); 
-        }
-        .book-actions {
-            flex-basis: 58%; 
-            display: flex;
-            flex-direction: column;
-            width: 100%; 
-        }
-        .book-actions h2 {
-            font-size: 1.7em; 
-            color: #f5f5f5; /* 标题文字改为亮白色 */
-            margin-top: 0;
-            margin-bottom: 25px;
-            font-weight: 600; 
-        }
-        .download-group {
-            margin-bottom: 22px;
-        }
-        .download-link-button {
-            display: inline-flex; 
-            align-items: center; 
-            background-color: #4F4F4F; /* 按钮背景 - 中度灰色 */
-            color: #f5f5f5; /* 按钮文字 - 亮白色 */
-            padding: 14px 22px; 
-            text-decoration: none;
-            border-radius: 8px; 
-            font-weight: 500;
-            font-size: 0.95em; 
-            border: 1px solid #606060; /* 按钮边框颜色 */
-            transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-            width: 100%; 
-            box-sizing: border-box; 
-            text-align: left; 
-        }
-        .download-link-button .icon {
-            margin-right: 12px; 
-            font-size: 1.15em;
-            color: #f5f5f5; /* 图标颜色与文字一致 */
-        }
-        .download-link-button:hover {
-            background-color: #5a5a5a; /* 悬停时按钮背景变亮一些 */
-            border-color: #707070;
-            /* 如果想用强调色 (例如红色 #B71C1C，请替换下面的颜色): */
-            /* background-color: #B71C1C; */
-            /* border-color: #B71C1C; */
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4); 
-        }
-        .format-description {
-            font-size: 0.88em;
-            color: #b0b0b0; /* 说明文字颜色 - 浅灰色 */
-            margin-top: 10px; 
-            padding-left: 2px; 
-        }
-
-        /* 许可证声明 */
-        .license-section {
-            background-color: #383838; /* 同书籍区背景 */
-            padding: 30px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-            border-radius: 12px;
-            text-align: center; 
-            margin-bottom: 40px;
-        }
-        .license-section h3 {
-            font-size: 1.4em; 
-            color: #f5f5f5; /* 标题文字改为亮白色 */
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        .license-section p {
-            font-size: 0.92em;
-            color: #cccccc; /* 段落文字改为较亮的灰色 */
-            max-width: 680px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 20px; 
-            padding: 25px 20px;
-            font-size: 0.85em; 
-            color: #a0a0a0; /* 页脚文字颜色 - 中等浅灰 */
+        .language-switcher-top {
             width: 100%;
-            background-color: transparent; 
+            text-align: center;
+            padding: 15px 0; /* 增加上下内边距 */
+            margin-bottom: 20px; /* 与下方内容间距 */
+            font-size: 0.95em;
+            background-color: #ffffff; /* 给切换器一个白色背景 */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* 轻微底部阴影 */
         }
-
-        /* 语言切换器样式 */
-        .language-switcher {
-            margin-bottom: 15px; 
-            font-size: 0.95em; 
-        }
-        .language-switcher a, .language-switcher span {
-            color: #a0a0a0; 
+        .language-switcher-top a, .language-switcher-top span {
+            color: #555; 
             text-decoration: none;
-            padding: 0 8px; 
+            padding: 0 10px; 
             transition: color 0.2s ease;
         }
-        .language-switcher a:hover {
-            color: #f5f5f5; 
+        .language-switcher-top a:hover {
+            color: #007bff; 
             text-decoration: underline;
         }
-        .language-switcher span {
-            color: #f5f5f5; 
+        .language-switcher-top span {
+            color: #333; 
             font-weight: bold; 
         }
 
-        /* 响应式设计 */
-        @media (min-width: 768px) {
-            .book-showcase {
-                flex-direction: row; 
-                align-items: flex-start; 
-            }
-            .book-actions h2 {
-                 text-align: left; 
-            }
+        .main-content-wrapper {
+            width: 90%;
+            max-width: 500px; 
+            margin: 20px auto 40px auto; /* 调整上边距 */
+            text-align: center; 
+        }
+
+        .book-cover-main {
+            max-width: 70%; /* 封面宽度相对于父容器，可调整 */
+            height: auto;
+            border-radius: 8px; 
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12); 
+            margin-bottom: 30px;
+            display: inline-block; 
+        }
+
+        .author-title {
+            font-size: 1.8em; 
+            color: #222222; 
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-weight: 600; 
+        }
+        .author-title .license-hint {
+            font-size: 0.6em;
+            font-weight: normal;
+            color: #666666;
+            margin-left: 5px;
+        }
+
+        .author-intro {
+            font-size: 0.95em;
+            color: #555555;
+            line-height: 1.7;
+            margin-bottom: 35px;
+            padding: 0 10px; 
+        }
+
+        .action-buttons-group {
+            display: flex;
+            justify-content: center; 
+            gap: 15px; 
+            margin-bottom: 30px; /* 为下方可能展开的下载区域留出空间 */
+        }
+
+        .action-button {
+            padding: 12px 25px;
+            font-size: 1em;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 25px; 
+            border: 1px solid transparent;
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+            min-width: 120px; 
+            text-align: center;
+        }
+
+        .action-button.primary-button {
+            background-color: #333333; 
+            color: #ffffff; 
+        }
+        .action-button.primary-button:hover {
+            background-color: #555555;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .action-button.secondary-button {
+            background-color: #ffffff; 
+            color: #333333; 
+            border: 1px solid #cccccc; 
+        }
+        .action-button.secondary-button:hover {
+            background-color: #f8f8f8;
+            border-color: #bbbbbb;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* 展开的下载选项容器 */
+        #download-options-container {
+            margin-top: 30px;
+            width: 100%;
+            text-align: left; /* 让内部的 group 左对齐 */
+            border-top: 1px solid #e0e0e0; /* 分隔线 */
+            padding-top: 25px;
+        }
+
+        .download-group-revealed {
+            margin-bottom: 20px;
+            background-color: #ffffff; /* 给每个下载组一个背景 */
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .action-button.revealed-download-button {
+            background-color: #f8f9fa; 
+            color: #333333; 
+            border: 1px solid #ced4da; 
+            display: inline-flex; 
+            align-items: center;
+            width: auto; /* 自动宽度，不再占满整行 */
+            padding: 10px 20px; 
+            text-decoration: none;
+            border-radius: 6px; /* 调整圆角 */
+            font-weight: 500;
+            font-size: 0.9em;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+        .action-button.revealed-download-button:hover {
+            background-color: #e9ecef;
+            border-color: #adb5bd;
+        }
+        .action-button.revealed-download-button .icon {
+            color: #333333; 
+            margin-right: 8px;
+            font-size: 1.1em;
+        }
+
+        .format-description-revealed {
+            font-size: 0.85em;
+            color: #555555; 
+            margin-top: 8px;
+            padding-left: 5px; 
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 20px; /* 增加页脚上下内边距 */
+            font-size: 0.8em; 
+            color: #888888; 
+            width: 100%;
+            margin-top: 30px; /* 与上方内容间距 */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="book-showcase-wrapper">
-            <article class="book-showcase">
-                <div class="book-visual">
-                    <img src="my-great-book-cover.png" alt="相对论" class="book-cover-style">
-                </div>
-                <div class="book-actions">
-                    <h2>Download links</h2>
-                    
-                    <div class="download-group">
-                        <a href="book_1.docx" download class="download-link-button">
-                            <span class="icon">⇩</span> Download .docx
-                        </a>
-                        <p class="format-description">.docx 适合需要编辑或在电脑上深度阅读的用户。</p>
-                    </div>
-                    
-                    <div class="download-group">
-                        <a href="book_1.epub" download class="download-link-button">
-                            <span class="icon">⇩</span> Download .epub
-                        </a>
-                        <p class="format-description">.epub 适合使用电子阅读器或手机/平板进行移动阅读的用户。</p>
-                    </div>
-                    
-                    <div class="download-group">
-                        <a href="book_1.pdf" download class="download-link-button">
-                            <span class="icon">⇩</span> Download .pdf
-                        </a>
-                        <p class="format-description">.pdf 适合需要保留原始排版或打印的用户。</p>
-                    </div>
-                </div>
-            </article>
-        </div>
-
-        <section class="license-section">
-            <h3>License Statement</h3>
-            <p>这里是你的许可证声明文本。The license dolor sit amet, dolipiog tficila Jccetam the voulecting the and toilcenianse picetset aclid tharirthe pocest poliaat intion, Minis ppsd tiyusened.</p>
-        </section>
+    <div class="language-switcher-top">
+        <span>中文</span> | <a href="index_en.html">English</a>
     </div>
 
-    <footer>
-        <div class="language-switcher">
-            <span>中文</span> | <a href="index_en.html">English</a>
+    <div class="main-content-wrapper">
+        <img src="my-great-book-cover.png" alt="书籍封面 - 相对论" class="book-cover-main"> 
+        
+        <h1 class="author-title">作者姓名 <span class="license-hint">(开放许可声明)</span></h1>
+        
+        <p class="author-intro">
+            这里是关于作者或书籍的一段简介文字，可以详细介绍作品的核心理念、创作背景等。力求简洁而引人入胜。请替换此处的示例文本。
+        </p>
+        
+        <div class="action-buttons-group">
+            <a href="#" id="toggle-downloads-button" class="action-button primary-button">下载作品</a>
+            <a href="support.html" class="action-button secondary-button">支持作者</a>
         </div>
+
+        <div id="download-options-container" style="display: none;">
+            <div class="download-group-revealed">
+                <a href="book_1.docx" download class="action-button revealed-download-button">
+                    <span class="icon">⇩</span> Download .docx
+                </a>
+                <p class="format-description-revealed">.docx 适合需要编辑或在电脑上深度阅读的用户。</p>
+            </div>
+            
+            <div class="download-group-revealed">
+                <a href="book_1.epub" download class="action-button revealed-download-button">
+                    <span class="icon">⇩</span> Download .epub
+                </a>
+                <p class="format-description-revealed">.epub 适合使用电子阅读器或手机/平板进行移动阅读的用户。</p>
+            </div>
+            
+            <div class="download-group-revealed">
+                <a href="book_1.pdf" download class="action-button revealed-download-button">
+                    <span class="icon">⇩</span> Download .pdf
+                </a>
+                <p class="format-description-revealed">.pdf 适合需要保留原始排版或打印的用户。</p>
+            </div>
+        </div>
+        </div> <footer>
         <p>&copy; <span id="currentYear"></span> 你的姓名或网站名. 版权所有.</p>
     </footer>
 
     <script>
+        // 页脚年份自动更新
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // 控制下载选项显示/隐藏的 JavaScript
+        const toggleButton = document.getElementById('toggle-downloads-button');
+        const downloadsContainer = document.getElementById('download-options-container');
+
+        if (toggleButton && downloadsContainer) {
+            toggleButton.addEventListener('click', function(event) {
+                event.preventDefault(); // 阻止链接的默认跳转行为 (#)
+                if (downloadsContainer.style.display === 'none' || downloadsContainer.style.display === '') {
+                    downloadsContainer.style.display = 'block';
+                } else {
+                    downloadsContainer.style.display = 'none';
+                }
+            });
+        }
     </script>
 </body>
 </html>
