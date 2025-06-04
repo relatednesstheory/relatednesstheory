@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Author's Homepage</title>
+    <title>Author's Homepage - 'Relatedness Theory'</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -15,17 +15,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-top: 0; /* Language switcher now has its own padding */
+            padding-top: 0; 
         }
 
         .language-switcher-top {
             width: 100%;
             text-align: center;
-            padding: 15px 0; /* Increased top/bottom padding */
-            margin-bottom: 20px; /* Spacing below */
+            padding: 15px 0; 
+            margin-bottom: 20px; 
             font-size: 0.95em;
-            background-color: #ffffff; /* White background for switcher */
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle bottom shadow */
+            background-color: #ffffff; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
         }
         .language-switcher-top a, .language-switcher-top span {
             color: #555; 
@@ -45,12 +45,12 @@
         .main-content-wrapper {
             width: 90%;
             max-width: 500px; 
-            margin: 20px auto 40px auto; /* Adjusted top margin */
+            margin: 20px auto 40px auto; 
             text-align: center; 
         }
 
         .book-cover-main {
-            max-width: 70%; /* Cover width relative to parent, adjustable */
+            max-width: 70%; 
             height: auto;
             border-radius: 8px; 
             box-shadow: 0 6px 20px rgba(0,0,0,0.12); 
@@ -66,25 +66,81 @@
             font-weight: 600; 
         }
         .author-title .license-hint {
-            font-size: 0.6em;
-            font-weight: normal;
-            color: #666666;
+            font-size: inherit; 
+            font-weight: inherit; 
+            color: #222222;   
             margin-left: 5px;
         }
 
-        .author-intro {
+        .author-intro { 
             font-size: 0.95em;
             color: #555555;
             line-height: 1.7;
-            margin-bottom: 35px;
+            margin-bottom: 20px; 
             padding: 0 10px; 
+        }
+        .intro-toggle-link { 
+            color: #007bff;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-left: 3px; 
+            font-weight: 500; 
+        }
+        .intro-toggle-link:hover {
+            color: #0056b3;
+        }
+
+        #license_details_container {
+            margin-top: 20px; 
+            width: 100%;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: left; 
+            box-sizing: border-box;
+            border-top: 1px solid #e0e0e0;
+        }
+        #license_details_container h3 {
+            font-size: 1.3em;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        #license_details_container p {
+            font-size: 0.9em;
+            color: #444;
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+        #license_details_container ul {
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+        #license_details_container li {
+            font-size: 0.9em;
+            color: #444;
+            margin-bottom: 6px;
+        }
+        #license_details_container a.license-link { 
+            color: #007bff;
+            text-decoration: underline;
+        }
+        #license_details_container a.license-link:hover {
+            color: #0056b3;
+        }
+        hr.license-hr {
+            border: 0;
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: 20px 0;
         }
 
         .action-buttons-group {
             display: flex;
             justify-content: center; 
             gap: 15px; 
-            margin-bottom: 30px; /* Space for potentially revealed download area */
+            margin-bottom: 30px; 
         }
 
         .action-button {
@@ -120,18 +176,17 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
-        /* Revealed download options container */
         #download-options-container {
             margin-top: 30px;
             width: 100%;
-            text-align: left; /* Align groups to the left */
-            border-top: 1px solid #e0e0e0; /* Separator line */
+            text-align: left; 
+            border-top: 1px solid #e0e0e0; 
             padding-top: 25px;
         }
 
         .download-group-revealed {
             margin-bottom: 20px;
-            background-color: #ffffff; /* Background for each download group */
+            background-color: #ffffff; 
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.08);
@@ -143,10 +198,10 @@
             border: 1px solid #ced4da; 
             display: inline-flex; 
             align-items: center;
-            width: auto; /* Auto width, not full row */
+            width: auto; 
             padding: 10px 20px; 
             text-decoration: none;
-            border-radius: 6px; /* Adjusted border radius */
+            border-radius: 6px; 
             font-weight: 500;
             font-size: 0.9em;
             transition: background-color 0.2s ease, border-color 0.2s ease;
@@ -170,11 +225,11 @@
         
         footer {
             text-align: center;
-            padding: 30px 20px; /* Increased footer top/bottom padding */
+            padding: 30px 20px; 
             font-size: 0.8em; 
             color: #888888; 
             width: 100%;
-            margin-top: 30px; /* Spacing from content above */
+            margin-top: 30px; 
         }
     </style>
 </head>
@@ -184,14 +239,42 @@
     </div>
 
     <div class="main-content-wrapper">
-        <img src="/images/CHINA.jpg" alt="Book Cover - Relatedness Theory" class="book-cover-main"> 
+        <img src="/images/CHINA.jpg" alt="Book Cover - 'Relatedness Theory'" class="book-cover-main"> 
         
         <h1 class="author-title">'Relatedness Theory' <span class="license-hint">(Open License Statement)</span></h1>
         
         <p class="author-intro">
-            This work, 'Relatedness Theory', by Wang Xiongwei, is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0 International) license.
+            This work, 'Relatedness Theory', is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0 International) license. <a href="#" id="intro_toggle_link" class="intro-toggle-link">(View License Details & Work Information)</a>
         </p>
         
+        <div id="license_details_container" style="display: none;">
+            <h3>'Relatedness Theory' Open License Statement</h3>
+            <p><strong>Author:</strong> Wang Xiongwei</p>
+            <p>This work, 'Relatedness Theory', by Wang Xiongwei, is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0 International) license.</p>
+            <p><strong>You are free to:</strong></p>
+            <ul>
+                <li><strong>Share</strong> — copy and redistribute the material in any medium or format.</li>
+                <li><strong>Adapt</strong> — remix, transform, and build upon the material.</li>
+            </ul>
+            <p><strong>Under the following terms:</strong></p>
+            <ul>
+                <li><strong>Attribution</strong> — You must give appropriate credit (Author of 'Relatedness Theory': Wang Xiongwei, DOI: [Not yet available]), provide a link to the license (see below), and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li>
+                <li><strong>NonCommercial</strong> — You may not use the material for commercial purposes.</li>
+                <li><strong>ShareAlike</strong> — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.</li>
+            </ul>
+            <p><strong>No additional restrictions</strong> — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.</p>
+            <p>The full official text of this license can be found at:<br>
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en" target="_blank" rel="noopener noreferrer" class="license-link">https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en</a> (English version)<br>
+                (The Simplified Chinese version of the license can be found at: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" target="_blank" rel="noopener noreferrer" class="license-link">https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans</a>)
+            </p>
+            <hr class="license-hr">
+            <p><strong>Official Access Channels & Author Support:</strong><br>
+            'Relatedness Theory' Permanent Identifier (DOI): [Not yet available].<br>
+            Currently, the author provides free reading and download versions via the personal website <a href="https://relatednesstheory.github.io/" class="license-link">https://relatednesstheory.github.io/</a>. It is recommended to obtain the original version published by the author through this channel.<br>
+            If you have benefited from this theory and wish to support the author's continued research and creation, you are welcome to visit the "Support Author" page on the aforementioned personal website to learn about sponsorship methods.<br>
+            Thank you for your understanding and support in jointly promoting the free dissemination and development of ideas.</p>
+        </div>
+
         <div class="action-buttons-group">
             <a href="#" id="toggle-downloads-button" class="action-button primary-button">Download Works</a>
             <a href="support.html" class="action-button secondary-button">Support Author</a>
@@ -199,27 +282,30 @@
 
         <div id="download-options-container" style="display: none;">
             <div class="download-group-revealed">
-                <a href="book_1.docx" download class="action-button revealed-download-button">
+                <a href="downloads/《相关论》(1).docx" download class="action-button revealed-download-button">
                     <span class="icon">⇩</span> Download .docx
                 </a>
                 <p class="format-description-revealed">.docx is suitable for users who need to edit or read in-depth on a computer.</p>
             </div>
             
             <div class="download-group-revealed">
-                <a href="book_1.epub" download class="action-button revealed-download-button">
+                <a href="downloads/《相关论》.epub" download class="action-button revealed-download-button">
                     <span class="icon">⇩</span> Download .epub
                 </a>
                 <p class="format-description-revealed">.epub is suitable for users who use e-readers or mobile phones/tablets for mobile reading.</p>
             </div>
             
             <div class="download-group-revealed">
-                <a href="book_1.pdf" download class="action-button revealed-download-button">
+                <a href="downloads/《相关论》.pdf" download class="action-button revealed-download-button">
                     <span class="icon">⇩</span> Download .pdf
                 </a>
                 <p class="format-description-revealed">.pdf is suitable for users who need to preserve the original layout or print.</p>
             </div>
         </div>
-        </div> <footer>
+
+    </div> 
+    
+    <footer>
         <p>&copy; <span id="currentYear"></span> Wang Xiongwei. All rights reserved.</p>
     </footer>
 
@@ -228,16 +314,33 @@
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
         // JavaScript to toggle download options visibility
-        const toggleButton = document.getElementById('toggle-downloads-button');
+        const toggleDownloadsButton = document.getElementById('toggle-downloads-button');
         const downloadsContainer = document.getElementById('download-options-container');
 
-        if (toggleButton && downloadsContainer) {
-            toggleButton.addEventListener('click', function(event) {
-                event.preventDefault(); // Prevent default anchor behavior (#)
+        if (toggleDownloadsButton && downloadsContainer) {
+            toggleDownloadsButton.addEventListener('click', function(event) {
+                event.preventDefault(); 
                 if (downloadsContainer.style.display === 'none' || downloadsContainer.style.display === '') {
                     downloadsContainer.style.display = 'block';
                 } else {
                     downloadsContainer.style.display = 'none';
+                }
+            });
+        }
+
+        // JavaScript to toggle license details visibility
+        const introToggleLink = document.getElementById('intro_toggle_link');
+        const licenseDetailsContainer = document.getElementById('license_details_container');
+
+        if (introToggleLink && licenseDetailsContainer) {
+            introToggleLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                if (licenseDetailsContainer.style.display === 'none' || licenseDetailsContainer.style.display === '') {
+                    licenseDetailsContainer.style.display = 'block';
+                    this.textContent = '(Hide Details)'; // Changed to English
+                } else {
+                    licenseDetailsContainer.style.display = 'none';
+                    this.textContent = '(View License Details & Work Information)'; // Changed to English
                 }
             });
         }
