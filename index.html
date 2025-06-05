@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -62,31 +63,21 @@
             font-size: 1.8em; 
             color: #222222; 
             margin-top: 0;
-            margin-bottom: 15px; 
+            margin-bottom: 25px; 
             font-weight: 600; 
         }
-
-        .author-intro { 
-            font-size: 0.95em;
-            color: #555555;
-            line-height: 1.7;
-            margin-bottom: 25px; 
-            padding: 0 10px; 
-            text-align: center; 
-        }
         
-        /* 修改点1：开放许可声明区域的样式 - 移除外框 */
         .open-license-statement-section {
-            /* background-color: #ffffff; */ /* 移除背景色 */
-            padding: 0; /* 移除内边距，或按需设少量 */
-            /* border-radius: 8px; */ /* 移除圆角 */
-            /* box-shadow: 0 2px 10px rgba(0,0,0,0.07); */ /* 移除阴影 */
+            background-color: transparent; 
+            padding: 0;                   
+            border-radius: 0;             
+            box-shadow: none;             
+            border: none;                 
             margin-top: 0; 
-            margin-bottom: 30px; 
-            text-align: center; /* 让内部的标题和摘要居中 */
-            /* border: 1px solid #e7e7e7; */ /* 移除边框 */
+            margin-bottom: 30px;          
+            text-align: center;           
         }
-        .open-license-title { 
+        .open-license-title { /* 这是始终可见的那个“开放许可声明”标题 */
             font-size: 1.15em; 
             font-weight: 600;   
             color: #333333;
@@ -112,16 +103,25 @@
             text-decoration: underline;
             color: #0056b3;
         }
-        /* 展开的详细内容区域，保持其原有卡片样式以确保可读性 */
+        
         #license_details_full_content { 
             margin-top: 15px;
-            padding: 20px 25px; /* 调整内边距 */
+            padding: 20px 25px; 
             border-top: 1px solid #eeeeee; 
-            background-color: #ffffff; /* 保留白色背景 */
-            border-radius: 8px;       /* 保留圆角 */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* 保留阴影 */
-            text-align: left;          /* 内部文本左对齐 */
-            border: 1px solid #e0e0e0; /* 保留细边框 */
+            background-color: #ffffff; 
+            border-radius: 8px;       
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            text-align: left;          
+            border: 1px solid #e0e0e0; 
+        }
+        /* 修改点：确保展开内容中的h3标题居中 */
+        #license_details_full_content h3 {
+            font-size: 1.15em; /* 与外部 .open-license-title 保持视觉协调 */
+            font-weight: 600;
+            color: #333333;   
+            margin-top: 0;    
+            margin-bottom: 15px; 
+            text-align: center; /*! <<< 使其居中 */
         }
         #license_details_full_content p { font-size: 0.85em; color: #444; margin-bottom: 10px; line-height: 1.6; }
         #license_details_full_content strong { font-weight: 600; color: #333;}
@@ -192,10 +192,6 @@
         
         <h1 class="author-title">《相关论》</h1> 
         
-        <p class="author-intro">
-            这里是关于作者或书籍的一段简介文字，可以详细介绍作品的核心理念、创作背景等。力求简洁而引人入胜。请替换此处的示例文本。
-        </p>
-
         <section class="open-license-statement-section">
             <h3 class="open-license-title">《相关论》开放许可声明</h3>
             <p class="license-abstract">
@@ -254,10 +250,10 @@
                 event.preventDefault();
                 if (licenseDetailsFullContent.style.display === 'none' || licenseDetailsFullContent.style.display === '') {
                     licenseDetailsFullContent.style.display = 'block';
-                    this.textContent = '收起详情'; // 更新后的文本
+                    this.textContent = '收起详情';
                 } else {
                     licenseDetailsFullContent.style.display = 'none';
-                    this.textContent = '查看详情'; // 更新后的文本
+                    this.textContent = '查看详情';
                 }
             });
         }
