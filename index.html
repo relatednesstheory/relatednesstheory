@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>作者主页 - 《相关论》</title>
     <style>
+        /* 所有CSS样式与上一版本相同 */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.65;
@@ -65,7 +66,6 @@
             margin-bottom: 15px; 
             font-weight: 600; 
         }
-        /* .license-hint 已从H1中移除，其CSS不再直接应用 */
 
         .author-intro { 
             font-size: 0.95em;
@@ -73,10 +73,9 @@
             line-height: 1.7;
             margin-bottom: 25px; 
             padding: 0 10px; 
-            text-align: center; /* 保持简介文本居中 */
+            text-align: center; 
         }
         
-        /* 开放许可声明区域的样式 */
         .open-license-statement-section {
             background-color: #ffffff;
             padding: 20px 25px; 
@@ -126,7 +125,6 @@
         #license_details_full_content a.license-link:hover { color: #0056b3; }
         #license_details_full_content hr.license-hr { border: 0; height: 1px; background-color: #e0e0e0; margin: 15px 0; }
 
-
         .action-buttons-group {
             display: flex;
             justify-content: center; 
@@ -167,8 +165,6 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
-        /* CSS for download_page.html would handle its own download links styling */
-        
         footer {
             text-align: center;
             padding: 30px 20px; 
@@ -189,7 +185,9 @@
         
         <h1 class="author-title">《相关论》</h1> 
         
-       
+        <p class="author-intro">
+            这里是关于作者或书籍的一段简介文字，可以详细介绍作品的核心理念、创作背景等。力求简洁而引人入胜。请替换此处的示例文本。
+        </p>
 
         <section class="open-license-statement-section">
             <h3 class="open-license-title">《相关论》开放许可声明</h3>
@@ -207,7 +205,7 @@
                 </ul>
                 <p><strong>惟须遵守下列条件：</strong></p>
                 <ul>
-                    <li><strong>署名</strong>— 您必须给出适当的署名（《相关论》作者：汪雄伟，DOI: [ 10.5281/zenodo.15596647]），提供指向本许可协议的链接（见下），同时标明是否（对原始作品）作了修改。您可以用任何合理的方式来署名，但是不得以任何方式暗示许可人为您或您的使用背书。</li>
+                    <li><strong>署名</strong>— 您必须给出适当的署名（《相关论》作者：汪雄伟，DOI: <a href="https://doi.org/10.5281/zenodo.15596647" target="_blank" rel="noopener noreferrer" class="license-link">10.5281/zenodo.15596647</a>），提供指向本许可协议的链接（见下），同时标明是否（对原始作品）作了修改。您可以用任何合理的方式来署名，但是不得以任何方式暗示许可人为您或您的使用背书。</li>
                     <li><strong>非商业性使用</strong>— 您不得将本作品用于商业目的。</li>
                     <li><strong>相同方式共享</strong>— 如果您再混合、转换或者基于本作品进行创作，您必须基于与原先许可协议相同的许可协议分发您贡献的作品。</li>
                     <li><strong>没有附加限制</strong> — 您不得适用法律术语或者技术措施从而限制其他人做许可协议允许的事情。</li>
@@ -218,11 +216,11 @@
                 </p>
                 <hr class="license-hr">
                 <p><strong>官方获取渠道与作者支持：</strong><br>
-                《相关论》官方永久标识符 (DOI): [ 10.5281/zenodo.15596647]<br>
+                《相关论》官方永久标识符 (DOI): <a href="https://doi.org/10.5281/zenodo.15596647" target="_blank" rel="noopener noreferrer" class="license-link">10.5281/zenodo.15596647</a><br>
                 当前由作者通过个人网站 <a href="http://relatednesstheory.com" target="_blank" rel="noopener noreferrer" class="license-link">relatednesstheory.com</a> 提供免费阅读和下载版本。建议通过此渠道获取作者发布的原始版本。<br>
                 如果您从本理论中受益，并希望支持作者持续的研究与创作，欢迎访问上述个人网站的“支持作者”页面了解赞助方式。<br>
                 感谢您的理解与支持，共同促进思想的自由传播与发展。</p>
-                </div>
+            </div>
         </section>
         
         <div class="action-buttons-group">
@@ -230,7 +228,7 @@
             <a href="support.html" class="action-button secondary-button">支持作者</a>
         </div>
 
-        </div> 
+    </div> 
     
     <footer>
         <p>&copy; <span id="currentYear"></span> 汪雄伟 版权所有</p>
