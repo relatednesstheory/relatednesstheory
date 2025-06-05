@@ -58,38 +58,38 @@
             display: inline-block; 
         }
 
-        .author-title { /* 主书名/作者名标题 */
+        .author-title { 
             font-size: 1.8em; 
             color: #222222; 
             margin-top: 0;
-            margin-bottom: 15px; /* 增加与下方简介的间距 */
+            margin-bottom: 15px; 
             font-weight: 600; 
         }
-        /* .license-hint 不再需要，已从H1中移除 */
+        /* .license-hint 已从H1中移除，其CSS不再直接应用 */
 
-        .author-intro { /* 书籍/作者的通用简介 */
+        .author-intro { 
             font-size: 0.95em;
             color: #555555;
             line-height: 1.7;
-            margin-bottom: 25px; /* 与下方许可声明区域的间距 */
+            margin-bottom: 25px; 
             padding: 0 10px; 
-            text-align: justify; /* 简介文本两端对齐可能效果更好 */
+            text-align: center; /* 保持简介文本居中 */
         }
         
-        /* 新增：开放许可声明区域的样式 */
+        /* 开放许可声明区域的样式 */
         .open-license-statement-section {
             background-color: #ffffff;
-            padding: 20px 25px; /* 调整内边距 */
+            padding: 20px 25px; 
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-            margin-top: 0; /* 紧随作者简介 */
+            margin-top: 0; 
             margin-bottom: 30px; 
             text-align: left; 
-            border: 1px solid #e7e7e7; /* 添加一个细边框 */
+            border: 1px solid #e7e7e7; 
         }
-        .open-license-title { /* 声明区域的小标题 */
-            font-size: 1.15em; /* 显著减小 */
-            font-weight: 600;   /* 仍然加粗，但不过分 */
+        .open-license-title { 
+            font-size: 1.15em; 
+            font-weight: 600;   
             color: #333333;
             margin-top: 0;
             margin-bottom: 10px;
@@ -100,20 +100,20 @@
             margin-bottom: 10px;
             line-height: 1.6;
         }
-        .details-toggle-link { /* “查看/收起详情”链接 */
+        .details-toggle-link { 
             color: #007bff;
-            text-decoration: none; /* 保持简洁，悬停时加下划线 */
+            text-decoration: none; 
             cursor: pointer;
             font-size: 0.9em;
             font-weight: 500;
-            display: inline-block; /* 允许设置 margin-top */
+            display: inline-block; 
             margin-top: 5px;
         }
         .details-toggle-link:hover {
             text-decoration: underline;
             color: #0056b3;
         }
-        #license_details_full_content { /* 隐藏的详细内容 */
+        #license_details_full_content { 
             margin-top: 15px;
             padding-top: 15px;
             border-top: 1px solid #eeeeee; 
@@ -167,52 +167,7 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
-        #download-options-container { /* 由“下载作品”按钮控制 */
-            margin-top: 30px;
-            width: 100%;
-            text-align: left; 
-            border-top: 1px solid #e0e0e0; 
-            padding-top: 25px;
-        }
-
-        .download-group-revealed {
-            margin-bottom: 20px;
-            background-color: #ffffff; 
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
-
-        .action-button.revealed-download-button {
-            background-color: #f8f9fa; 
-            color: #333333; 
-            border: 1px solid #ced4da; 
-            display: inline-flex; 
-            align-items: center;
-            width: auto; 
-            padding: 10px 20px; 
-            text-decoration: none;
-            border-radius: 6px; 
-            font-weight: 500;
-            font-size: 0.9em;
-            transition: background-color 0.2s ease, border-color 0.2s ease;
-        }
-        .action-button.revealed-download-button:hover {
-            background-color: #e9ecef;
-            border-color: #adb5bd;
-        }
-        .action-button.revealed-download-button .icon {
-            color: #333333; 
-            margin-right: 8px;
-            font-size: 1.1em;
-        }
-
-        .format-description-revealed {
-            font-size: 0.85em;
-            color: #555555; 
-            margin-top: 8px;
-            padding-left: 5px; 
-        }
+        /* CSS for download_page.html would handle its own download links styling */
         
         footer {
             text-align: center;
@@ -232,7 +187,9 @@
     <div class="main-content-wrapper">
         <img src="/images/CHINA.jpg" alt="书籍封面 - 《相关论》" class="book-cover-main"> 
         
-        <h1 class="author-title">《相关论》</h1> <p class="author-intro">
+        <h1 class="author-title">《相关论》</h1> 
+        
+        <p class="author-intro">
             这里是关于作者或书籍的一段简介文字，可以详细介绍作品的核心理念、创作背景等。力求简洁而引人入胜。请替换此处的示例文本。
         </p>
 
@@ -252,23 +209,24 @@
                 </ul>
                 <p><strong>惟须遵守下列条件：</strong></p>
                 <ul>
-                    <li><strong>署名</strong>— 您必须给出适当的署名（《相关论》作者：汪雄伟，DOI: [暂无]），提供指向本许可协议的链接（见下），同时标明是否（对原始作品）作了修改。您可以用任何合理的方式来署名，但是不得以任何方式暗示许可人为您或您的使用背书。</li>
+                    <li><strong>署名</strong>— 您必须给出适当的署名（《相关论》作者：汪雄伟，DOI: [ 10.5281/zenodo.15596647]），提供指向本许可协议的链接（见下），同时标明是否（对原始作品）作了修改。您可以用任何合理的方式来署名，但是不得以任何方式暗示许可人为您或您的使用背书。</li>
                     <li><strong>非商业性使用</strong>— 您不得将本作品用于商业目的。</li>
                     <li><strong>相同方式共享</strong>— 如果您再混合、转换或者基于本作品进行创作，您必须基于与原先许可协议相同的许可协议分发您贡献的作品。</li>
+                    <li><strong>没有附加限制</strong> — 您不得适用法律术语或者技术措施从而限制其他人做许可协议允许的事情。</li>
                 </ul>
-                <p><strong>没有附加限制</strong> — 您不得适用法律术语或者技术措施从而限制其他人做许可协议允许的事情。</p>
                 <p>本许可协议的完整官方文本可见：<br>
                     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-hans" target="_blank" rel="noopener noreferrer" class="license-link">https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-hans</a><br>
                     (简体中文版协议可见：<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" target="_blank" rel="noopener noreferrer" class="license-link">https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans</a>)
                 </p>
                 <hr class="license-hr">
                 <p><strong>官方获取渠道与作者支持：</strong><br>
-                《相关论》永久标识符 (DOI): [暂无]。<br>
-                当前由作者通过个人网站 <a href="https://relatednesstheory.github.io/" class="license-link">https://relatednesstheory.github.io/</a> 提供免费阅读和下载版本。建议通过此渠道获取作者发布的原始版本。<br>
+                《相关论》官方永久标识符 (DOI): [ 10.5281/zenodo.15596647]<br>
+                当前由作者通过个人网站 <a href="http://relatednesstheory.com" target="_blank" rel="noopener noreferrer" class="license-link">relatednesstheory.com</a> 提供免费阅读和下载版本。建议通过此渠道获取作者发布的原始版本。<br>
                 如果您从本理论中受益，并希望支持作者持续的研究与创作，欢迎访问上述个人网站的“支持作者”页面了解赞助方式。<br>
                 感谢您的理解与支持，共同促进思想的自由传播与发展。</p>
-            </div>
+                </div>
         </section>
+        
         <div class="action-buttons-group">
             <a href="download_page.html" class="action-button primary-button">下载作品</a>
             <a href="support.html" class="action-button secondary-button">支持作者</a>
@@ -284,24 +242,7 @@
         // 页脚年份自动更新
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // 移除或注释掉之前控制 download-options-container 的 JavaScript
-        /*
-        const toggleDownloadsButton = document.getElementById('toggle-downloads-button'); // 这个按钮ID已不存在
-        const downloadsContainer = document.getElementById('download-options-container');
-
-        if (toggleDownloadsButton && downloadsContainer) {
-            toggleDownloadsButton.addEventListener('click', function(event) {
-                event.preventDefault(); 
-                if (downloadsContainer.style.display === 'none' || downloadsContainer.style.display === '') {
-                    downloadsContainer.style.display = 'block';
-                } else {
-                    downloadsContainer.style.display = 'none';
-                }
-            });
-        }
-        */
-
-        // 控制新的许可详情展开/收起的 JavaScript
+        // 控制许可详情展开/收起的 JavaScript
         const licenseDetailsToggleLink = document.getElementById('license_details_toggle_link');
         const licenseDetailsFullContent = document.getElementById('license_details_full_content');
 
