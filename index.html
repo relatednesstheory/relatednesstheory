@@ -176,52 +176,8 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
-        #download-options-container {
-            margin-top: 30px;
-            width: 100%;
-            text-align: left; 
-            border-top: 1px solid #e0e0e0; 
-            padding-top: 25px;
-        }
-
-        .download-group-revealed {
-            margin-bottom: 20px;
-            background-color: #ffffff; 
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
-
-        .action-button.revealed-download-button {
-            background-color: #f8f9fa; 
-            color: #333333; 
-            border: 1px solid #ced4da; 
-            display: inline-flex; 
-            align-items: center;
-            width: auto; 
-            padding: 10px 20px; 
-            text-decoration: none;
-            border-radius: 6px; 
-            font-weight: 500;
-            font-size: 0.9em;
-            transition: background-color 0.2s ease, border-color 0.2s ease;
-        }
-        .action-button.revealed-download-button:hover {
-            background-color: #e9ecef;
-            border-color: #adb5bd;
-        }
-        .action-button.revealed-download-button .icon {
-            color: #333333; 
-            margin-right: 8px;
-            font-size: 1.1em;
-        }
-
-        .format-description-revealed {
-            font-size: 0.85em;
-            color: #555555; 
-            margin-top: 8px;
-            padding-left: 5px; 
-        }
+        /* 移除了 #download-options-container 和其内部元素的特定 CSS */
+        /* .download-group-revealed, .action-button.revealed-download-button, .format-description-revealed 的 CSS 已删除 */
         
         footer {
             text-align: center;
@@ -241,7 +197,7 @@
     <div class="main-content-wrapper">
         <img src="/images/CHINA.jpg" alt="书籍封面 - 《相关论》" class="book-cover-main"> 
         
-        <h1 class="author-title">《相关论》 <span class="license-hint">开放许可声明</span></h1>
+        <h1 class="author-title">《相关论》 <span class="license-hint">(开放许可声明)</span></h1>
         
         <p class="author-intro">
             本著作《相关论》采用知识共享许可协议 (CC BY-NC-SA 4.0 International)。<a href="#" id="intro_toggle_link" class="intro-toggle-link">(查看许可详情与作品信息)</a>
@@ -276,32 +232,10 @@
         </div>
 
         <div class="action-buttons-group">
-            <a href="#" id="toggle-downloads-button" class="action-button primary-button">下载作品</a>
+            <a href="download_page.html" class="action-button primary-button">下载作品</a>
             <a href="support.html" class="action-button secondary-button">支持作者</a>
         </div>
 
-        <div id="download-options-container" style="display: none;">
-            <div class="download-group-revealed">
-                <a href="downloads/《相关论》.docx" download class="action-button revealed-download-button">
-                    <span class="icon">⇩</span> Download .docx
-                </a>
-                <p class="format-description-revealed">.docx 适合需要编辑或在电脑上深度阅读的用户。</p>
-            </div>
-            
-            <div class="download-group-revealed">
-                <a href="downloads/《相关论》.epub" download class="action-button revealed-download-button">
-                    <span class="icon">⇩</span> Download .epub
-                </a>
-                <p class="format-description-revealed">.epub 适合使用电子阅读器或手机/平板进行移动阅读的用户。</p>
-            </div>
-            
-            <div class="download-group-revealed">
-                <a href="downloads/《相关论》.pdf" download class="action-button revealed-download-button">
-                    <span class="icon">⇩</span> Download .pdf
-                </a>
-                <p class="format-description-revealed">.pdf 适合需要保留原始排版或打印的用户。</p>
-            </div>
-        </div>
         </div> 
     
     <footer>
@@ -312,20 +246,7 @@
         // 页脚年份自动更新
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // 控制下载选项显示/隐藏的 JavaScript
-        const toggleDownloadsButton = document.getElementById('toggle-downloads-button');
-        const downloadsContainer = document.getElementById('download-options-container');
-
-        if (toggleDownloadsButton && downloadsContainer) {
-            toggleDownloadsButton.addEventListener('click', function(event) {
-                event.preventDefault(); 
-                if (downloadsContainer.style.display === 'none' || downloadsContainer.style.display === '') {
-                    downloadsContainer.style.display = 'block';
-                } else {
-                    downloadsContainer.style.display = 'none';
-                }
-            });
-        }
+        // 移除了控制 download-options-container 的 JavaScript
 
         // 控制简介/许可详情展开/收起的 JavaScript
         const introToggleLink = document.getElementById('intro_toggle_link');
