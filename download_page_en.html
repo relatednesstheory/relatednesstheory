@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download 'Relatedness Theory' - Author's Homepage</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.65;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f8; /* Light background */
+            color: #333333; /* Main text color */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh; 
+        }
+        .page-header { 
+            width: 100%;
+            text-align: center;
+            padding: 15px 0;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .page-header a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .page-header a:hover {
+            text-decoration: underline;
+        }
+
+        .download-content-wrapper {
+            width: 90%;
+            max-width: 700px; 
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            flex-grow: 1; 
+        }
+        .download-content-wrapper h1 {
+            font-size: 1.8em; 
+            color: #222222; 
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-weight: 600; 
+            text-align: center;
+        }
+
+        .download-group-revealed { 
+            margin-bottom: 25px;
+            background-color: #fdfdfd; 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border: 1px solid #eaeaea;
+        }
+
+        .action-button.revealed-download-button { 
+            background-color: #333333; 
+            color: #ffffff; 
+            border: 1px solid #333333; 
+            display: inline-flex; 
+            align-items: center;
+            width: auto; 
+            padding: 10px 20px; 
+            text-decoration: none;
+            border-radius: 25px; 
+            font-weight: 500;
+            font-size: 0.95em;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+        .action-button.revealed-download-button:hover {
+            background-color: #555555;
+            border-color: #555555;
+        }
+        .action-button.revealed-download-button .icon {
+            color: #ffffff; 
+            margin-right: 8px;
+            font-size: 1.1em;
+        }
+
+        .format-description-revealed { 
+            font-size: 0.9em;
+            color: #555555; 
+            margin-top: 10px;
+            padding-left: 5px; 
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px; 
+            font-size: 0.8em; 
+            color: #888888; 
+            width: 100%;
+            margin-top: auto; 
+        }
+    </style>
+</head>
+<body>
+    <div class="page-header">
+        <a href="index_en.html">Back to Author's Homepage</a>
+    </div>
+
+    <div class="download-content-wrapper">
+        <h1>Download 'Relatedness Theory'</h1>
+        
+        <div class="download-group-revealed">
+            <a href="downloads/Relatedness Theory.docx" download class="action-button revealed-download-button">
+                <span class="icon">⇩</span> Download .docx format
+            </a>
+            <p class="format-description-revealed">.DOCX Word document, convenient for copying, editing, referencing, and AI processing.</p>
+        </div>
+        
+        <div class="download-group-revealed">
+            <a href="downloads/Relatedness Theory.epub" download class="action-button revealed-download-button">
+                <span class="icon">⇩</span> Download .epub format
+            </a>
+            <p class="format-description-revealed">.EPUB Suitable for mobile phones, tablets, and e-readers; text reflows with screen size.</p>
+        </div>
+        
+        <div class="download-group-revealed">
+            <a href="downloads/Relatedness Theory.pdf" download class="action-button revealed-download-button">
+                <span class="icon">⇩</span> Download .pdf format
+            </a>
+            <p class="format-description-revealed">.PDF Preserves original book layout, suitable for computer reading and printing.</p>
+        </div>
+    </div> 
+    
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Wang Xiongwei. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Automatically update footer year
+        if (document.getElementById('currentYear')) { 
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        }
+    </script>
+</body>
+</html>
