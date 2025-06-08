@@ -62,74 +62,55 @@
             font-size: 1.8em; 
             color: #222222; 
             margin-top: 0;
-            margin-bottom: 25px; 
+            margin-bottom: 15px; 
             font-weight: 600; 
         }
-        
-        .open-license-statement-section {
-            background-color: transparent; 
-            padding: 0;                   
-            border-radius: 0;             
-            box-shadow: none;             
-            border: none;                 
-            margin-top: 0; 
-            margin-bottom: 30px;          
-            text-align: center;           
-        }
-        .open-license-title { /* 这是始终可见的那个“开放许可声明”标题 */
-            font-size: 1.15em; 
-            font-weight: 600;   
-            color: #333333;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-        .license-abstract {
+
+        .license-abstract-text { 
             font-size: 0.9em;
             color: #555555;
-            margin-bottom: 10px;
-            line-height: 1.6;
+            line-height: 1.7;
+            margin-bottom: 25px; 
+            padding: 0 10px; 
         }
         .details-toggle-link { 
             color: #007bff;
-            text-decoration: none; 
+            text-decoration: underline;
             cursor: pointer;
-            font-size: 0.9em;
+            margin-left: 5px; 
             font-weight: 500;
-            display: inline-block; 
-            margin-top: 5px;
         }
         .details-toggle-link:hover {
-            text-decoration: underline;
             color: #0056b3;
         }
-        
-        #license_details_full_content { 
-            margin-top: 15px;
-            padding: 20px 25px; 
-            border-top: 1px solid #eeeeee; 
-            background-color: #ffffff; 
-            border-radius: 8px;       
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-            text-align: left;          
-            border: 1px solid #e0e0e0; 
+
+        #license_details_container { 
+            margin-top: -15px; /* 让展开的框与上面的摘要距离更近 */
+            width: 100%;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: left; 
+            box-sizing: border-box;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 30px; /* 与下方按钮组的间距 */
         }
-        /* 修改点：确保展开内容中的h3标题居中 */
-        #license_details_full_content h3 {
-            font-size: 1.15em; /* 与外部 .open-license-title 保持视觉协调 */
-            font-weight: 600;
-            color: #333333;   
-            margin-top: 0;    
-            margin-bottom: 15px; 
+        /* 核心修改：确保展开内容中的h3标题居中 */
+        #license_details_container h3 {
+            font-size: 1.3em;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 20px; /* 增加与下方作者信息的间距 */
             text-align: center; /*! <<< 使其居中 */
         }
-        #license_details_full_content p { font-size: 0.85em; color: #444; margin-bottom: 10px; line-height: 1.6; }
-        #license_details_full_content strong { font-weight: 600; color: #333;}
-        #license_details_full_content ul { padding-left: 20px; margin-bottom: 10px; font-size: 0.85em; }
-        #license_details_full_content li { color: #444; margin-bottom: 5px; }
-        #license_details_full_content a.license-link { color: #007bff; text-decoration: underline; }
-        #license_details_full_content a.license-link:hover { color: #0056b3; }
-        #license_details_full_content hr.license-hr { border: 0; height: 1px; background-color: #e0e0e0; margin: 15px 0; }
-
+        #license_details_container p { font-size: 0.9em; color: #444; margin-bottom: 12px; line-height: 1.7; }
+        #license_details_container strong { font-weight: 600; color: #333;}
+        #license_details_container ul { padding-left: 20px; margin-bottom: 12px; }
+        #license_details_container li { font-size: 0.9em; color: #444; margin-bottom: 6px; }
+        #license_details_container a.license-link { color: #007bff; text-decoration: underline; }
+        #license_details_container a.license-link:hover { color: #0056b3; }
+        #license_details_container hr.license-hr { border: 0; height: 1px; background-color: #e0e0e0; margin: 20px 0; }
 
         .action-buttons-group {
             display: flex;
@@ -189,47 +170,45 @@
     <div class="main-content-wrapper">
         <img src="/images/CHINA.jpg" alt="书籍封面 - 《相关论》" class="book-cover-main"> 
         
-        <h1 class="author-title">《相关论》</h1> 
+        <h1 class="author-title">《相关论》 · 汪雄伟</h1>
         
-        <section class="open-license-statement-section">
-            <h3 class="open-license-title">《相关论》开放许可声明</h3>
-            <p class="license-abstract">
-                本著作《相关论》采用知识共享许可协议（CC BY-NC-SA 4.0 International)进行许可。 
-                <a href="#" id="license_details_toggle_link" class="details-toggle-link">(查看详情)</a>
-            </p>
-            <div id="license_details_full_content" style="display: none;">
-                <p style="margin-top:15px;"><strong>作者：</strong>汪雄伟</p>
-                <p>本著作《相关论》由汪雄伟创作，采用知识共享 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0 International) 许可协议进行许可。</p>
-                <p><strong>您可以自由地：</strong></p>
-                <ul>
-                    <li><strong>分享</strong>— 在任何媒介以任何形式复制、发行本作品。</li>
-                    <li><strong>演绎</strong>— 修改、转换或以本作品为基础进行创作。</li>
-                </ul>
-                <p><strong>惟须遵守下列条件：</strong></p>
-                <ul>
-                    <li><strong>署名</strong>— 您必须给出适当的署名（《相关论》作者：汪雄伟，DOI: <a href="https://doi.org/10.5281/zenodo.15596934" target="_blank" rel="noopener noreferrer" class="license-link">10.5281/zenodo.15596934</a>），提供指向本许可协议的链接（见下），同时标明是否（对原始作品）作了修改。您可以用任何合理的方式来署名，但是不得以任何方式暗示许可人为您或您的使用背书。</li>
-                    <li><strong>非商业性使用</strong>— 您不得将本作品用于商业目的。</li>
-                    <li><strong>相同方式共享</strong>— 如果您再混合、转换或者基于本作品进行创作，您必须基于与原先许可协议相同的许可协议分发您贡献的作品。</li>
-                    <li><strong>没有附加限制</strong> — 您不得适用法律术语或者技术措施从而限制其他人做许可协议允许的事情。</li>
-                </ul>
-                <p>本许可协议的完整官方文本可见：<br>
-                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-hans" target="_blank" rel="noopener noreferrer" class="license-link">https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-hans</a><br>
-                    (简体中文版协议可见：<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" target="_blank" rel="noopener noreferrer" class="license-link">https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans</a>)
-                </p>
-                <hr class="license-hr">
-                <p><strong>官方获取渠道与作者支持：</strong><br>
-                《相关论》官方永久标识符 (DOI): <a href="https://doi.org/10.5281/zenodo.15596934" target="_blank" rel="noopener noreferrer" class="license-link">10.5281/zenodo.15596934</a><br>
-                当前由作者通过个人网站 <a href="http://relatednesstheory.com" target="_blank" rel="noopener noreferrer" class="license-link">relatednesstheory.com</a> 提供免费阅读和下载版本。建议通过此渠道获取作者发布的原始版本。<br>
-                如果您从本理论中受益，并希望支持作者持续的研究与创作，欢迎访问上述个人网站的“支持作者”页面了解赞助方式。<br>
-                感谢您的理解与支持，共同促进思想的自由传播与发展。</p>
-            </div>
-        </section>
-        
+        <p class="license-abstract-text">
+            本著作《相关论》采用知识共享许可协议（CC BY-NC-SA 4.0 International)进行许可。<a href="#" id="license_details_toggle_link" class="details-toggle-link">（查看许可详情与作品信息）</a>
+        </p>
+
         <div class="action-buttons-group">
             <a href="download_page.html" class="action-button primary-button">下载作品</a>
             <a href="support.html" class="action-button secondary-button">支持作者</a>
         </div>
-
+        
+        <div id="license_details_container" style="display: none;">
+            <h3>《相关论》开放许可声明</h3>
+            <p><strong>作者：</strong>汪雄伟</p>
+            <p>本著作《相关论》由汪雄伟创作，采用知识共享 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0 International) 许可协议进行许可。</p>
+            <p><strong>您可以自由地：</strong></p>
+            <ul>
+                <li><strong>分享</strong>— 在任何媒介以任何形式复制、发行本作品。</li>
+                <li><strong>演绎</strong>— 修改、转换或以本作品为基础进行创作。</li>
+            </ul>
+            <p><strong>惟须遵守下列条件：</strong></p>
+            <ul>
+                <li><strong>署名</strong>— 您必须给出适当的署名（《相关论》作者：汪雄伟，DOI: <a href="https://doi.org/10.5281/zenodo.15596934" target="_blank" rel="noopener noreferrer" class="license-link">10.5281/zenodo.15596934</a>），提供指向本许可协议的链接（见下），同时标明是否（对原始作品）作了修改。您可以用任何合理的方式来署名，但是不得以任何方式暗示许可人为您或您的使用背书。</li>
+                <li><strong>非商业性使用</strong>— 您不得将本作品用于商业目的。</li>
+                <li><strong>相同方式共享</strong>— 如果您再混合、转换或者基于本作品进行创作，您必须基于与原先许可协议相同的许可协议分发您贡献的作品。</li>
+                <li><strong>没有附加限制</strong> — 您不得适用法律术语或者技术措施从而限制其他人做许可协议允许的事情。</li>
+            </ul>
+            <p>本许可协议的完整官方文本可见：<br>
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-hans" target="_blank" rel="noopener noreferrer" class="license-link">https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-hans</a><br>
+                (简体中文版协议可见：<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" target="_blank" rel="noopener noreferrer" class="license-link">https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans</a>)
+            </p>
+            <hr class="license-hr">
+            <p><strong>官方获取渠道与作者支持：</strong><br>
+            《相关论》官方永久标识符 (DOI): <a href="https://doi.org/10.5281/zenodo.15596934" target="_blank" rel="noopener noreferrer" class="license-link">10.5281/zenodo.15596934</a><br>
+            当前由作者通过个人网站 <a href="http://relatednesstheory.com" target="_blank" rel="noopener noreferrer" class="license-link">relatednesstheory.com</a> 提供免费阅读和下载版本。建议通过此渠道获取作者发布的原始版本。<br>
+            如果您从本理论中受益，并希望支持作者持续的研究与创作，欢迎访问上述个人网站的“支持作者”页面了解赞助方式。<br>
+            感谢您的理解与支持，共同促进思想的自由传播与发展。</p>
+        </div>
+        
     </div> 
     
     <footer>
@@ -242,17 +221,17 @@
 
         // 控制许可详情展开/收起的 JavaScript
         const licenseDetailsToggleLink = document.getElementById('license_details_toggle_link');
-        const licenseDetailsFullContent = document.getElementById('license_details_full_content');
+        const licenseDetailsContainer = document.getElementById('license_details_container');
 
-        if (licenseDetailsToggleLink && licenseDetailsFullContent) {
+        if (licenseDetailsToggleLink && licenseDetailsContainer) {
             licenseDetailsToggleLink.addEventListener('click', function(event) {
                 event.preventDefault();
-                if (licenseDetailsFullContent.style.display === 'none' || licenseDetailsFullContent.style.display === '') {
-                    licenseDetailsFullContent.style.display = 'block';
-                    this.textContent = '收起详情';
+                if (licenseDetailsContainer.style.display === 'none' || licenseDetailsContainer.style.display === '') {
+                    licenseDetailsContainer.style.display = 'block';
+                    this.textContent = '（收起详情）';
                 } else {
-                    licenseDetailsFullContent.style.display = 'none';
-                    this.textContent = '查看详情';
+                    licenseDetailsContainer.style.display = 'none';
+                    this.textContent = '（查看许可详情与作品信息）';
                 }
             });
         }
