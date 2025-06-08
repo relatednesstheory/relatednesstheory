@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Author's Homepage - 'Relatedness Theory'</title>
     <style>
-        /* All CSS styles are identical to the previous English version */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.65;
@@ -67,64 +66,50 @@
             font-weight: 600; 
         }
 
-        .author-intro { 
-            font-size: 0.95em;
+        .license-abstract-text { 
+            font-size: 0.9em;
             color: #555555;
             line-height: 1.7;
             margin-bottom: 25px; 
             padding: 0 10px; 
-            text-align: center; 
-        }
-        
-        .open-license-statement-section {
-            background-color: #ffffff;
-            padding: 20px 25px; 
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-            margin-top: 0; 
-            margin-bottom: 30px; 
-            text-align: left; 
-            border: 1px solid #e7e7e7; 
-        }
-        .open-license-title { 
-            font-size: 1.15em; 
-            font-weight: 600;   
-            color: #333333;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-        .license-abstract {
-            font-size: 0.9em;
-            color: #555555;
-            margin-bottom: 10px;
-            line-height: 1.6;
         }
         .details-toggle-link { 
             color: #007bff;
-            text-decoration: none; 
+            text-decoration: underline;
             cursor: pointer;
-            font-size: 0.9em;
+            margin-left: 5px; 
             font-weight: 500;
-            display: inline-block; 
-            margin-top: 5px;
         }
         .details-toggle-link:hover {
-            text-decoration: underline;
             color: #0056b3;
         }
-        #license_details_full_content { 
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #eeeeee; 
-        }
-        #license_details_full_content p { font-size: 0.85em; color: #444; margin-bottom: 10px; line-height: 1.6; }
-        #license_details_full_content strong { font-weight: 600; color: #333;}
-        #license_details_full_content ul { padding-left: 20px; margin-bottom: 10px; font-size: 0.85em; }
-        #license_details_full_content li { color: #444; margin-bottom: 5px; }
-        #license_details_full_content a.license-link { color: #007bff; text-decoration: underline; }
-        #license_details_full_content a.license-link:hover { color: #0056b3; }
-        #license_details_full_content hr.license-hr { border: 0; height: 1px; background-color: #e0e0e0; margin: 15px 0; }
 
+        #license_details_container { 
+            margin-top: -15px; 
+            width: 100%;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: left; 
+            box-sizing: border-box;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 30px; 
+        }
+        #license_details_container h3 {
+            font-size: 1.3em;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 20px; 
+            text-align: center; /* Center the heading inside the details box */
+        }
+        #license_details_container p { font-size: 0.9em; color: #444; margin-bottom: 12px; line-height: 1.7; }
+        #license_details_container strong { font-weight: 600; color: #333;}
+        #license_details_container ul { padding-left: 20px; margin-bottom: 12px; }
+        #license_details_container li { font-size: 0.9em; color: #444; margin-bottom: 6px; }
+        #license_details_container a.license-link { color: #007bff; text-decoration: underline; }
+        #license_details_container a.license-link:hover { color: #0056b3; }
+        #license_details_container hr.license-hr { border: 0; height: 1px; background-color: #e0e0e0; margin: 20px 0; }
 
         .action-buttons-group {
             display: flex;
@@ -184,14 +169,20 @@
     <div class="main-content-wrapper">
         <img src="/images/CHINA.jpg" alt="Book Cover - 'Relatedness Theory'" class="book-cover-main"> 
         
-        <h1 class="author-title">'Relatedness Theory'</h1> 
+        <h1 class="author-title">'Relatedness Theory' · Wang Xiongwei</h1>
         
-        <p class="author-intro">
-            This work, 'Relatedness Theory', is licensed under the Creative Commons license (CC BY-NC-SA 4.0 International). <a href="#" id="license_details_toggle_link" class="details-toggle-link">(View License Details & Work Information)</a>
+        <p class="license-abstract-text">
+            This work, 'Relatedness Theory', is licensed under the Creative Commons License (CC BY-NC-SA 4.0 International). <a href="#" id="license_details_toggle_link" class="details-toggle-link">(View License Details & Work Information)</a>
         </p>
         
-        <div id="license_details_full_content" style="display: none;">
-            <p style="margin-top:15px;"><strong>Author:</strong> Xiongwei Wang</p>
+        <div class="action-buttons-group">
+            <a href="download_page_en.html" class="action-button primary-button">Download Works</a>
+            <a href="support.html" class="action-button secondary-button">Support Author</a>
+        </div>
+
+        <div id="license_details_container" style="display: none;">
+            <h3>Relatedness Theory Open License Statement</h3>
+            <p><strong>Author:</strong> Xiongwei Wang</p>
             <p>This work, 'Relatedness Theory', created by Xiongwei Wang, is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0 International) License.</p>
             <p><strong>You are free to:</strong></p>
             <ul>
@@ -207,20 +198,15 @@
             </ul>
             <p>The full official text of this license can be found at:<br>
                 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en" target="_blank" rel="noopener noreferrer" class="license-link">https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en</a><br>
-                (An official summary in English is available at: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer" class="license-link">https://creativecommons.org/licenses/by-nc-sa/4.0/</a>)
+                (An official summary in English is available at: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer" class="license-link">https://creativecommons.org/licenses/by-nc-sa/4.0/</a>)
             </p>
             <hr class="license-hr">
             <p><strong>Official Access Channel and Author Support:</strong><br>
-            The Digital Object Identifier (DOI) for 'Relatedness Theory' is: <a href="https://doi.org/10.5281/zenodo.15596934" target="_blank" rel="noopener noreferrer" class="license-link">10.5281/zenodo.15596934</a>.<br>
-            Currently, free reading and downloadable versions are provided by the author via the personal website: <a href="http://relatednesstheory.com" target="_blank" rel="noopener noreferrer" class="license-link">relatednesstheory.com</a><br>
-            It is recommended to obtain the original version published by the author through this channel.<br>
-            If you have benefited from this theory and wish to support the author's continued research and creation, you are welcome to visit the "Support the Author" page on the aforementioned personal website to learn about ways to contribute.<br>
-            Thank you for your understanding and support in jointly promoting the free dissemination and development of thought.</p>
-        </div>
-        
-        <div class="action-buttons-group">
-            <a href="download_page_en.html" class="action-button primary-button">Download Works</a>
-            <a href="support.html" class="action-button secondary-button">Support Author</a>
+                The Digital Object Identifier (DOI) for 'Relatedness Theory' is: <a href="https://doi.org/10.5281/zenodo.15596934" target="_blank" rel="noopener noreferrer" class="license-link">10.5281/zenodo.15596934</a>.<br>
+                Currently, free reading and downloadable versions are provided by the author via the personal website: <a href="http://relatednesstheory.com" target="_blank" rel="noopener noreferrer" class="license-link">relatednesstheory.com</a><br>
+                It is recommended to obtain the original version published by the author through this channel.<br>
+                If you have benefited from this theory and wish to support the author's continued research and creation, you are welcome to visit the "Support the Author" page on the aforementioned personal website to learn about ways to contribute.<br>
+                Thank you for your understanding and support in jointly promoting the free dissemination and development of thought.</p>
         </div>
 
     </div> 
@@ -230,22 +216,22 @@
     </footer>
 
     <script>
-        // 页脚年份自动更新
+        // Automatically update footer year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // 控制许可详情展开/收起的 JavaScript
+        // JavaScript to toggle license details visibility
         const licenseDetailsToggleLink = document.getElementById('license_details_toggle_link');
-        const licenseDetailsFullContent = document.getElementById('license_details_full_content');
+        const licenseDetailsContainer = document.getElementById('license_details_container');
 
-        if (licenseDetailsToggleLink && licenseDetailsFullContent) {
+        if (licenseDetailsToggleLink && licenseDetailsContainer) {
             licenseDetailsToggleLink.addEventListener('click', function(event) {
                 event.preventDefault();
-                if (licenseDetailsFullContent.style.display === 'none' || licenseDetailsFullContent.style.display === '') {
-                    licenseDetailsFullContent.style.display = 'block';
-                    this.textContent = 'Hide Details';
+                if (licenseDetailsContainer.style.display === 'none' || licenseDetailsContainer.style.display === '') {
+                    licenseDetailsContainer.style.display = 'block';
+                    this.textContent = '(Hide Details)';
                 } else {
-                    licenseDetailsFullContent.style.display = 'none';
-                    this.textContent = 'View Details'; 
+                    licenseDetailsContainer.style.display = 'none';
+                    this.textContent = '(View License Details & Work Information)';
                 }
             });
         }
