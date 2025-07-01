@@ -39,20 +39,31 @@
             width: 90%;
             max-width: 700px; 
             margin: 30px auto;
-            padding: 20px;
+            padding: 20px 30px; /* 增加左右内边距 */
             background-color: #ffffff;
             border-radius: 12px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.1);
             flex-grow: 1; 
         }
+        /* 主标题 H1 */
         .download-content-wrapper h1 {
-            font-size: 1.6em;  
+            font-size: 1.8em;  
             color: #222222; 
-            margin-top: 0;
-            margin-bottom: 30px;
+            margin-top: 10px; /* 调整上边距 */
+            margin-bottom: 40px; /* 增加与下方内容的间距 */
             font-weight: 600; 
             text-align: center;
             line-height: 1.4; 
+        }
+        /* 小标题 H2 */
+        h2.sub-heading {
+            font-size: 1.2em; /* 调整字号以适应长文本 */
+            color: #444444;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 20px;
+            line-height: 1.5;
         }
 
         .download-group-revealed { 
@@ -99,21 +110,11 @@
             padding-left: 5px; 
         }
         
-        /* 新增：分割线样式 */
         hr.section-divider {
             border: 0;
             height: 1px;
             background-color: #dddddd;
-            margin: 40px 5%; /* 上下留出足够间距，左右缩进5% */
-        }
-        /* 新增：小标题样式 */
-        h2.sub-heading {
-            font-size: 1.3em;
-            color: #444444;
-            text-align: center;
-            font-weight: 600;
-            margin-top: 0;
-            margin-bottom: 20px;
+            margin: 40px 5%; 
         }
 
         footer {
@@ -132,12 +133,13 @@
     </div>
 
     <div class="download-content-wrapper">
-        <h1>《相关论：从本体论基础到统一存在框架的探索》</h1>
+        <h1>下载《相关论》</h1>
         
+        <h2 class="sub-heading">《相关论：从本体论基础到统一存在框架的探索》</h2>
         <div class="download-group-revealed">
             <a href="downloads/《相关论：从本体论基础到统一存在框架的探索》.docx" download class="action-button revealed-download-button">
                 <span class="icon">⇩</span> 
-                <span class="button-text">下载《相关论：从本体论基础到统一存在框架的探索》.docx</span>
+                <span class="button-text">下载 .docx 格式</span>
             </a>
             <p class="format-description-revealed">.DOCX  
               Word文档，方便复制、编辑、引用和AI处理。</p>
@@ -154,12 +156,11 @@
         
         <hr class="section-divider">
 
-        <h2 class="sub-heading">相关著作</h2>
-
+        <h2 class="sub-heading">《相关论：自我意识的关系几何动力学》</h2>
         <div class="download-group-revealed">
             <a href="downloads/《相关论：自我意识的关系几何动力学》.docx" download class="action-button revealed-download-button">
                 <span class="icon">⇩</span>
-                <span class="button-text">下载《相关论：自我意识的关系几何动力学》.docx</span>
+                <span class="button-text">下载 .docx 格式</span>
             </a>
             <p class="format-description-revealed">.DOCX  
               Word文档，方便复制、编辑、引用和AI处理。</p>
